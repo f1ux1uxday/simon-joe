@@ -39,5 +39,9 @@ module.exports = {
       1,
     'max-len':
       1,
+    'react/jsx-uses-react':
+      1,
+    'react/jsx-uses-vars':
+      1,
     },
 };

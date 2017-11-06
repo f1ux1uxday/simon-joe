@@ -34,6 +34,6 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: 'styles.css',
-    },),
+    }),
   ],
 }
