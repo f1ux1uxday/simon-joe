@@ -12,15 +12,15 @@ module.exports = {
     rules: [{
       enforce: 'pre',
       test: /\.js.*/,
-      loader: 'eslint-loader',
+      use: 'eslint-loader',
       exclude: /node_modules/,
     },{
       test: /\.js.*/,
-      loader: 'babel-loader',
+      use: 'babel-loader',
       exclude: /node_modules/,
     },{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
+      use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [
           'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
