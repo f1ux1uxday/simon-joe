@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import 'normalize.css'
-import styles from './App.css'
+
+// import styles from './App.css'
+import Header from './components/sj-header'
+import Pads from './components/sj-pads'
 
 class App extends Component {
   render() {
     return (
-      <h1 className={styles.heading}> up and running... </h1>
+      <div>
+        <Header />
+        <h1> up and running... </h1>
+        <Pads />
+      </div>
     )
   }
 }

@@ -1,0 +1,25 @@
+#padcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.pad {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 27rem;
+  width: 27rem;
+  background-color: black;
+  border: solid 1px yellow;
+  margin: auto;
+}
