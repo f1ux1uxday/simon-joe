@@ -43,5 +43,5 @@ module.exports = {
       1,
     'react/jsx-uses-vars':
       1,
-    },
+  },
 };
