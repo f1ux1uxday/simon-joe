@@ -4,7 +4,7 @@ import styles from './sj-pads.css'
 class Pads extends Component {
   render() {
     return (
-      <div id={styles.padcontainer}>
+      <div id={styles.padContainer}>
         <div className={styles.row}>
           <div className={styles.pad} id='pad1'></div>
           <div className={styles.pad} id='pad2'></div>
