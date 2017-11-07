@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './sj-header.css'
+import styles from '../styles/sj-header.css'
 
 const Header = () => (
   <div>

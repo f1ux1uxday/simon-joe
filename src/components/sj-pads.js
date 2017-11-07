@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './sj-pads.css'
+import styles from '../styles/sj-pads.css'
 
 class Pads extends Component {
   render() {
