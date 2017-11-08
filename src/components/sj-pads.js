@@ -4,9 +4,9 @@ import styles from '../styles/sj-pads.css'
 class Pads extends Component {
 
   clickHandle(e) {
-    let targetpad = e.currentTarget.id.toString()
-    document.getElementById(targetpad).classList.toggle('pad')
-    console.log(targetpad)
+    let targ = e.currentTarget.id.toString()
+    // document.getElementById(targ).classList.add('selected')
+    console.log(targ)
   }
 
   padSelector() {
