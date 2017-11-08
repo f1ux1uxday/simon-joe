@@ -9,14 +9,18 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      cpuSequence: [],
+      youSequence: [],
+      active: 'cpu',
       gameOn: 'no',
+      turnCount: 0,
     }
     this.start = this.start.bind(this)
   }
 
   start() {
     this.setState({
-      gameOn: 'yes'
+      gameOn: 'yes',
     })
   }
 
@@ -24,7 +28,9 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Pads />
+        <Pads
+          gameOn={this.state.gameOn}
+        />
         <Options
           gameOn={this.state.gameOn}
           start={this.start}
