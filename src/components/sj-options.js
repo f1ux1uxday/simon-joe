@@ -11,12 +11,12 @@ class Options extends Component {
     console.log(this.props.gameOn)
     this.props.setCpuSequence()
     console.log(this.props.cpuSequence)
-    // console.log(this.props.cpuSequence[0])
-    let index = this.props.cpuSequence[0].toString()
-    console.log(index)
-    // document.getElementById(index).classList.toggle(styles.selected)
-    // this.refs[this.props.cpuSequence[0]].classList.toggle(styles.selected)
-    console.log(this.refs.index)
+    let activate = () => {
+      let index = this.props.cpuSequence[0]
+      document.getElementById(index).classList.toggle(styles.selected)
+    }
+    activate()
+    setTimeout(activate, 500)
   }
 
   optionsStateCheck() {

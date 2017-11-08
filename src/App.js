@@ -25,7 +25,7 @@ class App extends Component {
     })
   }
 
-  setCpuSequence(num) {
+  setCpuSequence() {
     this.setState({
       cpuSequence: this.state.cpuSequence
     }) 

@@ -53,12 +53,12 @@ class Pads extends Component {
       return (
         <div id={styles.padContainer}>
           <div className={styles.row}>
-            <div className={styles.pad} id='pad1'></div>
-            <div className={styles.pad} id='pad2'></div>
+            <div className={styles.pad} id='0'></div>
+            <div className={styles.pad} id='1'></div>
           </div>
           <div className={styles.row}>
-            <div className={styles.pad} id='pad3'></div>
-            <div className={styles.pad} id='pad4'></div>
+            <div className={styles.pad} id='2'></div>
+            <div className={styles.pad} id='3'></div>
           </div>
         </div>
       )
