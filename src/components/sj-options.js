@@ -6,7 +6,7 @@ class Options extends Component {
     for (let i = 0; i < 20; i++) {
       let randomNumber = Math.floor(Math.random() * 4)
       this.props.cpuSequence.push(randomNumber)
-    }  
+    }
     this.props.start()
     console.log(this.props.gameOn)
     this.props.setCpuSequence()
