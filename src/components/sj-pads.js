@@ -4,8 +4,12 @@ import styles from '../styles/sj-pads.css'
 class Pads extends Component {
 
   clickHandle(e) {
-    let targ = e.currentTarget.id.toString()
-    // document.getElementById(targ).classList.add('selected')
+    let targ = e.currentTarget.id
+    let activate = () => {
+      document.getElementById(targ).classList.toggle(styles.selected)
+    }
+    activate()
+    setTimeout(activate, 500)
     console.log(targ)
   }
 
@@ -17,11 +21,13 @@ class Pads extends Component {
             <div
               className={styles.pad}
               id='0'
+              ref='0'
               onClick={this.clickHandle}
             ></div>
             <div
               className={styles.pad}
               id='1'
+              ref='1'
               onClick={this.clickHandle}
             ></div>
           </div>
@@ -29,11 +35,13 @@ class Pads extends Component {
             <div
               className={styles.pad}
               id='2'
+              ref='2'
               onClick={this.clickHandle}
             ></div>
             <div
               className={styles.pad}
               id='3'
+              ref='3'
               onClick={this.clickHandle}
             ></div>
           </div>

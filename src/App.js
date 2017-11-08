@@ -11,17 +11,24 @@ class App extends Component {
     this.state = {
       cpuSequence: [],
       youSequence: [],
-      active: 'cpu',
+      active: 'none',
       gameOn: 'no',
       turnCount: 0,
     }
     this.start = this.start.bind(this)
+    this.setCpuSequence = this.setCpuSequence.bind(this)
   }
 
   start() {
     this.setState({
       gameOn: 'yes',
     })
+  }
+
+  setCpuSequence(num) {
+    this.setState({
+      cpuSequence: this.state.cpuSequence
+    }) 
   }
 
   render() {
@@ -32,8 +39,10 @@ class App extends Component {
           gameOn={this.state.gameOn}
         />
         <Options
+          cpuSequence={this.state.cpuSequence}
           gameOn={this.state.gameOn}
           start={this.start}
+          setCpuSequence={this.setCpuSequence}
         />
       </div>
     )

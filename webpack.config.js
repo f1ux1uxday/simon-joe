@@ -23,7 +23,7 @@ module.exports = {
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [
-          'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
+          'css-loader?modules,localIdentName="[local]"',
         ],
       }),
     },],
