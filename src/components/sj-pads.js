@@ -6,17 +6,20 @@ class Pads extends Component {
   showCpuSequence() {
     let cpuSequence = this.props.cpuSequence
 
-    if (this.props.active === 'cpu') {
+    if (this.props.active === 'cpu' &&
+      this.props.turnCount > 0) {
       for (let q = 0; q <= this.props.turnCount; q++) {
         let illuminate = () => {
-          document.getElementById(cpuSequence[q].toString()).classList.toggle(styles.selected)
+          setTimeout(() => {
+            document.getElementById(cpuSequence[q].toString()).classList.toggle(styles.cpuSelected)
+          }, 500)
+          setTimeout(illuminate, 500)
         }
         illuminate()
-        setTimeout(illuminate, 5000)
+        console.log('q: ' + q)
       }
-      console.log(this.props.turnCount)
+      console.log('tc: ' + this.props.turnCount)
     }
-    // this.props.nextTurn()
   }
 
   clickHandle(e) {
@@ -63,6 +66,7 @@ class Pads extends Component {
     }
     this.props.nextTurn()
     this.props.switchActive()
+    this.showCpuSequence()
     console.log(this.props.turnCount + ' ' + this.props.active)
 
 
