@@ -8,7 +8,6 @@ class Options extends Component {
       this.props.cpuSequence.push(randomNumber)
     }
     this.props.start()
-    console.log(this.props.gameOn)
     this.props.setCpuSequence()
     console.log(this.props.cpuSequence)
     let activate = () => {
@@ -17,6 +16,8 @@ class Options extends Component {
     }
     activate()
     setTimeout(activate, 500)
+    this.props.switchActive()
+    console.log(this.props.active)
   }
 
   optionsStateCheck() {

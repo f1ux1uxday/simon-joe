@@ -10,13 +10,16 @@ class App extends Component {
     super(props)
     this.state = {
       cpuSequence: [],
-      youSequence: [],
-      active: 'none',
+      plyrSequence: [],
+      active: 'cpu',
       gameOn: 'no',
       turnCount: 0,
     }
     this.start = this.start.bind(this)
+    this.nextTurn = this.nextTurn.bind(this)
+    this.switchActive = this.switchActive.bind(this)
     this.setCpuSequence = this.setCpuSequence.bind(this)
+    this.setPlyrSequence = this.setPlyrSequence.bind(this)
   }
 
   start() {
@@ -25,10 +28,35 @@ class App extends Component {
     })
   }
 
+  nextTurn() {
+    this.setState({
+      turnCount: this.state.turnCount += 1,
+    })
+  }
+
+  switchActive() {
+    if (this.state.active === 'cpu') {
+      this.setState({
+        active: 'plyr',
+      })
+    }
+    if (this.state.active === 'plyr') {
+      this.setState({
+        active: 'cpu',
+      })
+    }
+  }
+
   setCpuSequence() {
     this.setState({
-      cpuSequence: this.state.cpuSequence
-    }) 
+      cpuSequence: this.state.cpuSequence,
+    })
+  }
+
+  setPlyrSequence() {
+    this.setState({
+      plyrSequence: this.state.plyrSequence,
+    })
   }
 
   render() {
@@ -36,12 +64,21 @@ class App extends Component {
       <div>
         <Header />
         <Pads
+          cpuSequence={this.state.cpuSequence}
+          plyrSequence={this.state.plyrSequence}
+          active={this.state.active}
           gameOn={this.state.gameOn}
+          turnCount={this.state.turnCount}
+          nextTurn={this.nextTurn}
+          switchActive={this.switchActive}
+          setPlyrSequence={this.setPlyrSequence}
         />
         <Options
           cpuSequence={this.state.cpuSequence}
+          active={this.state.active}
           gameOn={this.state.gameOn}
           start={this.start}
+          switchActive={this.switchActive}
           setCpuSequence={this.setCpuSequence}
         />
       </div>
