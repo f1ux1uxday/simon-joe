@@ -4,22 +4,35 @@ import styles from '../styles/sj-pads.css'
 class Pads extends Component {
 
   showCpuSequence() {
-    let cpuSequence = this.props.cpuSequence
+    const runCpuSequence = value =>
+      new Promise(resolve =>
+        setTimeout(() => resolve(value === this.props.turnCount ?
+          'done' : 'no'), 500))
 
-    if (this.props.active === 'cpu' &&
-      this.props.turnCount > 0) {
-      for (let q = 0; q <= this.props.turnCount; q++) {
-        let illuminate = () => {
-          setTimeout(() => {
-            document.getElementById(cpuSequence[q].toString()).classList.toggle(styles.cpuSelected)
-          }, 500)
-          setTimeout(illuminate, 500)
+    const loop = value =>
+      runCpuSequence(value).then(result => {
+        let cpuSequence = this.props.cpuSequence
+        let toggle = () => {
+          document.getElementById(cpuSequence[value]).classList.toggle(styles.cpuSelected)  
         }
-        illuminate()
-        console.log('q: ' + q)
-      }
-      console.log('tc: ' + this.props.turnCount)
-    }
+        if (result === 'done') {
+          console.log('done')
+          setTimeout(toggle, 500)
+          setTimeout(toggle, 200)
+          // toggle class and end turn
+        } else {
+          console.log(this.props.turnCount + ': ' + value)
+          setTimeout(toggle, 500)
+          setTimeout(toggle, 200)
+          return loop(value + 1)
+        }
+      })
+
+    loop(0).then(() => {
+      console.log('loop complete')
+      this.props.resetPlyrSequence()
+      // this.props.switchActive()
+    })
   }
 
   clickHandle(e) {
@@ -30,6 +43,7 @@ class Pads extends Component {
       (plyrSequence.length - 1 < this.props.turnCount ||
       this.props.turnCount === 0)) {
       console.log(this.props.active)
+      // this.props.resetPlyrSequence()
       let targ = e.currentTarget.id
       let activate = () => {
         document.getElementById(targ).classList.toggle(styles.selected)
@@ -38,35 +52,32 @@ class Pads extends Component {
       setTimeout(activate, 500)
       console.log(targ)
       plyrSequence.push(targ)
-      this.props.setPlyrSequence()
+      // this.props.setPlyrSequence()
       console.log(plyrSequence)
-      for (let i = 0; i <= this.props.turnCount; i++) {
+      for (let i = 0; i < plyrSequence.length; i++) {
         if (plyrSequence[i] != cpuSequence[i]) {
           console.log('you fucked up')
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again.
-        } else if (i === this.props.turnCount) {
+          console.log(i + ': ' + this.props.turnCount)
+        } 
+        if (i === this.props.turnCount) {
           if (plyrSequence[i] == cpuSequence[i]) {
             console.log('turn suxxzessful')
+            this.props.nextTurn()
+
+            this.showCpuSequence()
+            console.log(i + ': ' + this.props.turnCount)
             this.props.switchActive()
-            // this.props.nextTurn()
-            // this.showCpuSequence()
-            // for (let q = 0; q <= this.props.turnCount; q++) {
-              // let illuminate = () => {
-                // document.getElementById(cpuSequence[q]).classList.toggle(styles.selected)
-              // }
-              // illuminate()
-              // setTimeout(illuminate, 500)
-            // }
           }
         } else {
           console.log('so far so good')
+          console.log(i + ': ' + this.props.turnCount)
         }
       }
     }
-    this.props.nextTurn()
-    this.props.switchActive()
-    this.showCpuSequence()
+    // this.props.resetPlyrSequence()
+    // this.props.switchActive()
     console.log(this.props.turnCount + ' ' + this.props.active)
 
 

@@ -19,7 +19,7 @@ class App extends Component {
     this.nextTurn = this.nextTurn.bind(this)
     this.switchActive = this.switchActive.bind(this)
     this.setCpuSequence = this.setCpuSequence.bind(this)
-    this.setPlyrSequence = this.setPlyrSequence.bind(this)
+    this.resetPlyrSequence = this.resetPlyrSequence.bind(this)
   }
 
   start() {
@@ -53,9 +53,10 @@ class App extends Component {
     })
   }
 
-  setPlyrSequence() {
+  resetPlyrSequence() {
     this.setState({
-      plyrSequence: this.state.plyrSequence,
+      plyrSequence: [],
+      active: 'plyr',
     })
   }
 
@@ -71,7 +72,7 @@ class App extends Component {
           turnCount={this.state.turnCount}
           nextTurn={this.nextTurn}
           switchActive={this.switchActive}
-          setPlyrSequence={this.setPlyrSequence}
+          resetPlyrSequence={this.resetPlyrSequence}
         />
         <Options
           cpuSequence={this.state.cpuSequence}
