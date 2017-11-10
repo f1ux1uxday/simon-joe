@@ -31,7 +31,6 @@ class Pads extends Component {
     loop(0).then(() => {
       console.log('loop complete')
       this.props.resetPlyrSequence()
-      // this.props.switchActive()
     })
   }
 
@@ -42,43 +41,42 @@ class Pads extends Component {
     if (this.props.active === 'plyr' &&
       (plyrSequence.length - 1 < this.props.turnCount ||
       this.props.turnCount === 0)) {
-      console.log(this.props.active)
+
       let targ = e.currentTarget.id
       let activate = () => {
-        document.getElementById(targ).classList.toggle(styles.selected)
+        document.getElementById(targ)
+        .classList.toggle(styles.selected)
       }
       activate()
       setTimeout(activate, 500)
-      console.log(targ)
+
       plyrSequence.push(targ)
-      console.log(plyrSequence)
+      // console.log(plyrSequence)
       for (let i = 0; i < plyrSequence.length; i++) {
         if (plyrSequence[i] != cpuSequence[i]) {
-          console.log('you fucked up')
+          console.log('you made a mistake')
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again.
-          console.log(i + ': ' + this.props.turnCount)
+
         }
         if (i === this.props.turnCount) {
           if (plyrSequence[i] == cpuSequence[i]) {
-            console.log('turn suxxzessful')
+            // console.log('turn suxxzessful')
             this.props.nextTurn()
 
             this.showCpuSequence()
-            console.log(i + ': ' + this.props.turnCount)
+
             this.props.switchActive()
           }
         } else {
-          console.log('so far so good')
-          console.log(i + ': ' + this.props.turnCount)
+          // console.log('so far so good')
+
         }
       }
     }
     // this.props.resetPlyrSequence()
     // this.props.switchActive()
     console.log(this.props.turnCount + ' ' + this.props.active)
-
-
   }
 
   padSelector() {
