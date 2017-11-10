@@ -13,7 +13,8 @@ class Pads extends Component {
       runCpuSequence(value).then(result => {
         let cpuSequence = this.props.cpuSequence
         let toggle = () => {
-          document.getElementById(cpuSequence[value]).classList.toggle(styles.cpuSelected)
+          document.getElementById(cpuSequence[value])
+            .classList.toggle(styles.cpuSelected)
         }
         if (result === 'done') {
           console.log('done')
@@ -44,14 +45,13 @@ class Pads extends Component {
 
       let targ = e.currentTarget.id
       let activate = () => {
-        document.getElementById(targ)
-        .classList.toggle(styles.selected)
+        document.getElementById(targ).classList.toggle(styles.selected)
       }
       activate()
       setTimeout(activate, 500)
 
       plyrSequence.push(targ)
-      // console.log(plyrSequence)
+      // Then check to see if plyrSequence matches cpuSequence
       for (let i = 0; i < plyrSequence.length; i++) {
         if (plyrSequence[i] != cpuSequence[i]) {
           console.log('you made a mistake')
