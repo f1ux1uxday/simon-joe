@@ -13,7 +13,7 @@ class Pads extends Component {
       runCpuSequence(value).then(result => {
         let cpuSequence = this.props.cpuSequence
         let toggle = () => {
-          document.getElementById(cpuSequence[value]).classList.toggle(styles.cpuSelected)  
+          document.getElementById(cpuSequence[value]).classList.toggle(styles.cpuSelected)
         }
         if (result === 'done') {
           console.log('done')
@@ -43,7 +43,6 @@ class Pads extends Component {
       (plyrSequence.length - 1 < this.props.turnCount ||
       this.props.turnCount === 0)) {
       console.log(this.props.active)
-      // this.props.resetPlyrSequence()
       let targ = e.currentTarget.id
       let activate = () => {
         document.getElementById(targ).classList.toggle(styles.selected)
@@ -52,7 +51,6 @@ class Pads extends Component {
       setTimeout(activate, 500)
       console.log(targ)
       plyrSequence.push(targ)
-      // this.props.setPlyrSequence()
       console.log(plyrSequence)
       for (let i = 0; i < plyrSequence.length; i++) {
         if (plyrSequence[i] != cpuSequence[i]) {
@@ -60,7 +58,7 @@ class Pads extends Component {
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again.
           console.log(i + ': ' + this.props.turnCount)
-        } 
+        }
         if (i === this.props.turnCount) {
           if (plyrSequence[i] == cpuSequence[i]) {
             console.log('turn suxxzessful')
