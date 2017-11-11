@@ -4,6 +4,7 @@ import styles from '../styles/sj-pads.css'
 class Pads extends Component {
 
   showCpuSequence() {
+    this.props.switchActive()
     const runCpuSequence = value =>
       new Promise(resolve =>
         setTimeout(() => resolve(value === this.props.turnCount ?
@@ -17,12 +18,11 @@ class Pads extends Component {
             .classList.toggle(styles.cpuSelected)
         }
         if (result === 'done') {
-          console.log('done')
+          // Console.log('done')
           setTimeout(toggle, 500)
           setTimeout(toggle, 200)
-          // toggle class and end turn
         } else {
-          console.log(this.props.turnCount + ': ' + value)
+          // Console.log(this.props.turnCount + ': ' + value)
           setTimeout(toggle, 500)
           setTimeout(toggle, 200)
           return loop(value + 1)
@@ -47,21 +47,24 @@ class Pads extends Component {
       let activate = () => {
         document.getElementById(targ).classList.toggle(styles.selected)
       }
+
       activate()
       setTimeout(activate, 500)
 
       plyrSequence.push(targ)
       // Then check to see if plyrSequence matches cpuSequence
       for (let i = 0; i < plyrSequence.length; i++) {
+
         if (plyrSequence[i] != cpuSequence[i]) {
           console.log('you made a mistake')
+          this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again.
-
         }
+
         if (i === this.props.turnCount) {
           if (plyrSequence[i] == cpuSequence[i]) {
-            // console.log('turn suxxzessful')
+            console.log('turn suxxzessful')
             this.props.nextTurn()
 
             this.showCpuSequence()
@@ -69,13 +72,11 @@ class Pads extends Component {
             this.props.switchActive()
           }
         } else {
-          // console.log('so far so good')
+          // Console.log('so far so good')
 
         }
       }
     }
-    // this.props.resetPlyrSequence()
-    // this.props.switchActive()
     console.log(this.props.turnCount + ' ' + this.props.active)
   }
 

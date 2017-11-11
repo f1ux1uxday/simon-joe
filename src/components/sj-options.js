@@ -17,7 +17,7 @@ class Options extends Component {
     activate()
     setTimeout(activate, 500)
     this.props.switchActive()
-    console.log(this.props.active)
+    // Console.log(this.props.active)
   }
 
   optionsStateCheck() {
