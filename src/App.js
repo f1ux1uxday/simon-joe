@@ -13,18 +13,28 @@ class App extends Component {
       plyrSequence: [],
       active: 'cpu',
       gameOn: 'no',
+      strict: 'off',
       turnCount: 0,
     }
     this.start = this.start.bind(this)
+    this.strictStart = this.strictStart.bind(this)
     this.nextTurn = this.nextTurn.bind(this)
     this.switchActive = this.switchActive.bind(this)
     this.setCpuSequence = this.setCpuSequence.bind(this)
+    this.resetCpuSequence = this.resetCpuSequence.bind(this)
     this.resetPlyrSequence = this.resetPlyrSequence.bind(this)
   }
 
   start() {
     this.setState({
       gameOn: 'yes',
+    })
+  }
+
+  strictStart() {
+    this.setState({
+      gameOn: 'yes',
+      strict: 'on',
     })
   }
 
@@ -53,6 +63,13 @@ class App extends Component {
     })
   }
 
+  resetCpuSequence() {
+    this.setState({
+      cpuSequence: [],
+      turnCount: 0,
+    })
+  }
+
   resetPlyrSequence() {
     this.setState({
       plyrSequence: [],
@@ -69,16 +86,20 @@ class App extends Component {
           plyrSequence={this.state.plyrSequence}
           active={this.state.active}
           gameOn={this.state.gameOn}
+          strict={this.state.strict}
           turnCount={this.state.turnCount}
           nextTurn={this.nextTurn}
           switchActive={this.switchActive}
+          setCpuSequence={this.setCpuSequence}
           resetPlyrSequence={this.resetPlyrSequence}
+          resetCpuSequence={this.resetCpuSequence}
         />
         <Options
           cpuSequence={this.state.cpuSequence}
           active={this.state.active}
           gameOn={this.state.gameOn}
           start={this.start}
+          strictStart={this.strictStart}
           switchActive={this.switchActive}
           setCpuSequence={this.setCpuSequence}
         />

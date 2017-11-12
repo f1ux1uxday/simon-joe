@@ -55,8 +55,25 @@ class Pads extends Component {
       // Then check to see if plyrSequence matches cpuSequence
       for (let i = 0; i < plyrSequence.length; i++) {
 
-        if (plyrSequence[i] != cpuSequence[i]) {
+        if (plyrSequence[i] != cpuSequence[i] &&
+          this.props.strict === 'off') {
           console.log('you made a mistake')
+          this.showCpuSequence()
+          // Play error sound, switch 'active' to 'cpu'
+          // and iterate through cpuSequence again.
+        }
+
+        if (plyrSequence[i] != cpuSequence[i] &&
+          this.props.strict === 'on') {
+          console.log('strict: you made a mistake')
+          this.props.resetCpuSequence()
+          this.props.setCpuSequence()
+          for (let i = 0; i < 20; i++) {
+            let randomNumber = Math.floor(Math.random() * 4)
+            cpuSequence.push(randomNumber)
+          }
+          console.log(cpuSequence)
+          this.props.setCpuSequence()
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again.
