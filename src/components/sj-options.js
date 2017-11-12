@@ -11,7 +11,7 @@ class Options extends Component {
 
     this.props.start()
     this.props.setCpuSequence()
-    // console.log(this.props.cpuSequence)
+    // Console.log(this.props.cpuSequence)
 
     let activate = () => {
       let index = this.props.cpuSequence[0]
