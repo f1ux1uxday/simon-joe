@@ -21,3 +21,15 @@
   background-color: black;
   color: teal;
 }
+
+.cpuSelected {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 26rem;
+  width: 26rem;
+  background-color: turquoise;
+  border: dotted 3.5px magenta;
+  margin: auto;
+}

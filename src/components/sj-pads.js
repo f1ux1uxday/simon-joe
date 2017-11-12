@@ -5,6 +5,7 @@ class Pads extends Component {
 
   showCpuSequence() {
     this.props.switchActive()
+
     const runCpuSequence = value =>
       new Promise(resolve =>
         setTimeout(() => resolve(value === this.props.turnCount ?
@@ -17,6 +18,7 @@ class Pads extends Component {
           document.getElementById(cpuSequence[value])
             .classList.toggle(styles.cpuSelected)
         }
+
         if (result === 'done') {
           // Console.log('done')
           setTimeout(toggle, 500)
@@ -94,7 +96,6 @@ class Pads extends Component {
             this.props.strict === 'on') {
             this.flushCpuSequence()
             setTimeout(this.showCpuSequence, 500)
-            
           }
         }
       }

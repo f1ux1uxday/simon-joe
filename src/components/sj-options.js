@@ -2,33 +2,29 @@ import React, { Component } from 'react'
 import styles from '../styles/sj-options.css'
 
 class Options extends Component {
-  // getCpuSequence() {
-    // for (let i = 0; i < 20; i++) {
-      // let randomNumber = Math.floor(Math.round() * 4)
-      // this.props.cpuSequence.push(randomNumber)
-    // }
-  // }
 
   startGame() {
     for (let i = 0; i < 20; i++) {
       let randomNumber = Math.floor(Math.random() * 4)
       this.props.cpuSequence.push(randomNumber)
     }
+
     this.props.start()
     this.props.setCpuSequence()
-    console.log(this.props.cpuSequence)
+    // console.log(this.props.cpuSequence)
+
     let activate = () => {
       let index = this.props.cpuSequence[0]
-      document.getElementById(index).classList.toggle(styles.selected)
+      document.getElementById(index).classList.toggle(styles.cpuSelected)
     }
     activate()
     setTimeout(activate, 500)
+
     this.props.switchActive()
     // Console.log(this.props.active)
   }
 
   startGameStrict() {
-    // this.getCpuSequence()
     for (let i = 0; i < 20; i++) {
       let randomNumber = Math.floor(Math.random() * 4)
       this.props.cpuSequence.push(randomNumber)
@@ -36,12 +32,14 @@ class Options extends Component {
 
     this.props.strictStart()
     this.props.setCpuSequence()
+
     let activate = () => {
       let index = this.props.cpuSequence[0]
-      document.getElementById(index).classList.toggle(styles.selected)
+      document.getElementById(index).classList.toggle(styles.cpuSelected)
     }
     activate()
     setTimeout(activate, 500)
+
     this.props.switchActive()
   }
 
