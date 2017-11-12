@@ -35,6 +35,15 @@ class Pads extends Component {
     })
   }
 
+  flushCpuSequence() {
+    this.props.resetCpuSequence()
+    for (let i = 0; i < 20; i++) {
+      let randomNumber = Math.floor(Math.random() * 4)
+      this.props.cpuSequence[i] = randomNumber
+    }
+    this.props.setCpuSequence()
+  }
+
   clickHandle(e) {
     let cpuSequence = this.props.cpuSequence
     let plyrSequence = this.props.plyrSequence
@@ -66,14 +75,7 @@ class Pads extends Component {
         if (plyrSequence[i] != cpuSequence[i] &&
           this.props.strict === 'on') {
           console.log('strict: you made a mistake')
-          this.props.resetCpuSequence()
-          this.props.setCpuSequence()
-          for (let i = 0; i < 20; i++) {
-            let randomNumber = Math.floor(Math.random() * 4)
-            cpuSequence.push(randomNumber)
-          }
-          console.log(cpuSequence)
-          this.props.setCpuSequence()
+          this.flushCpuSequence()
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again.
@@ -88,9 +90,12 @@ class Pads extends Component {
 
             this.props.switchActive()
           }
-        } else {
-          // Console.log('so far so good')
-
+          if (plyrSequence[i] != cpuSequence[i] &&
+            this.props.strict === 'on') {
+            this.flushCpuSequence()
+            setTimeout(this.showCpuSequence, 500)
+            
+          }
         }
       }
     }

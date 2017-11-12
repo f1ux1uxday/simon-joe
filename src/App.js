@@ -66,6 +66,7 @@ class App extends Component {
   resetCpuSequence() {
     this.setState({
       cpuSequence: [],
+      plyrSequence: [],
       turnCount: 0,
     })
   }
