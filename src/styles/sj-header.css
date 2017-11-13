@@ -14,17 +14,3 @@ html {
     text-align: center;
   }
 
-  .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-  }
-
-  .navelement {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-  }
-
-

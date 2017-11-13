@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import styles from '../styles/sj-pads.css'
 
 class Pads extends Component {
@@ -110,24 +111,24 @@ class Pads extends Component {
         <div id={styles.padContainer}>
           <div className={styles.row}>
             <div
-              className={styles.pad}
+              className={classNames(styles.pad, styles.zero)}
               id='0'
               onClick={this.clickHandle.bind(this)}
             ></div>
             <div
-              className={styles.pad}
+              className={classNames(styles.pad, styles.one)}
               id='1'
               onClick={this.clickHandle.bind(this)}
             ></div>
           </div>
           <div className={styles.row}>
             <div
-              className={styles.pad}
+              className={classNames(styles.pad, styles.two)}
               id='2'
               onClick={this.clickHandle.bind(this)}
             ></div>
             <div
-              className={styles.pad}
+              className={classNames(styles.pad, styles.three)}
               id='3'
               onClick={this.clickHandle.bind(this)}
             ></div>
@@ -140,12 +141,16 @@ class Pads extends Component {
       return (
         <div id={styles.padContainer}>
           <div className={styles.row}>
-            <div className={styles.pad} id='0'></div>
-            <div className={styles.pad} id='1'></div>
+            <div className={classNames(styles.pad, styles.zero)}
+              id='0'></div>
+            <div className={classNames(styles.pad, styles.one)}
+              id='1'></div>
           </div>
           <div className={styles.row}>
-            <div className={styles.pad} id='2'></div>
-            <div className={styles.pad} id='3'></div>
+            <div className={classNames(styles.pad, styles.two)}
+              id='2'></div>
+            <div className={classNames(styles.pad, styles.three)}
+              id='3'></div>
           </div>
         </div>
       )

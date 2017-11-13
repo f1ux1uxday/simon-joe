@@ -17,11 +17,27 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 26rem;
-  width: 26rem;
+  height: 28rem;
+  width: 28rem;
   background-color: black;
   border: solid 3.5px teal;
   margin: auto;
+}
+
+.zero {
+  border-radius: 100% 0% 0% 0%;
+}
+
+.one {
+  border-radius: 0% 100% 0% 0%;
+}
+
+.two {
+  border-radius: 0% 0% 0% 100%;
+}
+
+.three {
+  border-radius: 0% 0% 100% 0%;
 }
 
 .selected {
@@ -29,8 +45,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 26rem;
-  width: 26rem;
+  height: 28rem;
+  width: 28rem;
   background-color: purple;
   border: dotted 3.5px magenta;
   margin: auto;
@@ -41,8 +57,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 26rem;
-  width: 26rem;
+  height: 28rem;
+  width: 28rem;
   background-color: turquoise;
   border: dotted 3.5px magenta;
   margin: auto;
