@@ -23,6 +23,7 @@ class App extends Component {
     this.setCpuSequence = this.setCpuSequence.bind(this)
     this.resetCpuSequence = this.resetCpuSequence.bind(this)
     this.resetPlyrSequence = this.resetPlyrSequence.bind(this)
+    this.getInitialState = this.getInitialState.bind(this)
   }
 
   start() {
@@ -78,6 +79,17 @@ class App extends Component {
     })
   }
 
+  getInitialState() {
+    this.setState({
+      cpuSequence: [],
+      plyrSequence: [],
+      active: 'cpu',
+      gameOn: 'no',
+      strict: 'off',
+      turnCount: 0,
+    })
+  }
+
   render() {
     return (
       <div>
@@ -103,6 +115,7 @@ class App extends Component {
           strictStart={this.strictStart}
           switchActive={this.switchActive}
           setCpuSequence={this.setCpuSequence}
+          getInitialState={this.getInitialState}
         />
       </div>
     )

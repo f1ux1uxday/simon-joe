@@ -44,6 +44,7 @@ class Pads extends Component {
       this.props.cpuSequence[i] = randomNumber
     }
     this.props.setCpuSequence()
+    console.log(this.props.cpuSequence)
   }
 
   clickHandle(e) {
@@ -95,7 +96,7 @@ class Pads extends Component {
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
             this.flushCpuSequence()
-            setTimeout(this.showCpuSequence, 500)
+            setTimeout(this.showCpuSequence, 100)
           }
         }
       }

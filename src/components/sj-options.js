@@ -3,6 +3,10 @@ import styles from '../styles/sj-options.css'
 
 class Options extends Component {
 
+  resetGame() {
+    this.props.getInitialState()
+  }
+
   startGame() {
     for (let i = 0; i < 20; i++) {
       let randomNumber = Math.floor(Math.random() * 4)
@@ -58,6 +62,18 @@ class Options extends Component {
             onClick={this.startGameStrict.bind(this)}
           >
             strict
+          </button>
+        </div>
+      )
+    }
+    if (this.props.gameOn === 'yes') {
+      return (
+        <div id={styles.optionContainer}>
+          <button
+            className={styles.optionButton}
+            onClick={this.resetGame.bind(this)}
+          >
+            reset
           </button>
         </div>
       )
