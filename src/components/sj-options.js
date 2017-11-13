@@ -69,6 +69,9 @@ class Options extends Component {
     if (this.props.gameOn === 'yes') {
       return (
         <div id={styles.optionContainer}>
+          <div className={styles.turnCounter}>
+            {this.props.turnCount}
+          </div>
           <button
             className={styles.optionButton}
             onClick={this.resetGame.bind(this)}

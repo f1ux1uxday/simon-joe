@@ -111,6 +111,7 @@ class App extends Component {
           cpuSequence={this.state.cpuSequence}
           active={this.state.active}
           gameOn={this.state.gameOn}
+          turnCount={(this.state.turnCount + 1)}
           start={this.start}
           strictStart={this.strictStart}
           switchActive={this.switchActive}
