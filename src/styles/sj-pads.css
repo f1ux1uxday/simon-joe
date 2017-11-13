@@ -48,7 +48,7 @@
   height: 28rem;
   width: 28rem;
   background-color: purple;
-  border: dotted 3.5px magenta;
+  border: ridge 3.5px magenta;
   margin: auto;
 }
 
@@ -60,6 +60,6 @@
   height: 28rem;
   width: 28rem;
   background-color: turquoise;
-  border: dotted 3.5px magenta;
+  border: ridge 3.5px magenta;
   margin: auto;
 }

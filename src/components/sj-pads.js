@@ -102,7 +102,7 @@ class Pads extends Component {
         }
       }
     }
-    console.log(this.props.turnCount + ' ' + this.props.active)
+    // Console.log(this.props.turnCount + ' ' + this.props.active)
   }
 
   padSelector() {

@@ -6,7 +6,7 @@
   height: 28rem;
   width: 28rem;
   background-color: purple;
-  border: dotted 3.5px magenta;
+  border: ridge 3.5px magenta;
   margin: auto;
 }
 
@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 2%;
+  margin: auto;
 }
 
 .optionButton {
@@ -31,7 +32,7 @@
   height: 28rem;
   width: 28rem;
   background-color: turquoise;
-  border: dotted 3.5px magenta;
+  border: ridge 3.5px magenta;
   margin: auto;
 }
 
