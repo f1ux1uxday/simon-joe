@@ -5,7 +5,7 @@ import styles from '../styles/sj-pads.css'
 class Pads extends Component {
 
   showCpuSequence() {
-    this.props.switchActive()
+    setTimeout(this.props.switchActive, 250)
 
     const runCpuSequence = value =>
       new Promise(resolve =>
