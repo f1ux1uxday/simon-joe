@@ -77,6 +77,7 @@ class Pads extends Component {
         }
 
         if (plyrSequence[i] != cpuSequence[i] &&
+          i !== this.props.turnCount &&
           this.props.strict === 'on') {
           console.log('strict: you made a mistake')
           this.flushCpuSequence()
@@ -97,7 +98,7 @@ class Pads extends Component {
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
             this.flushCpuSequence()
-            setTimeout(this.showCpuSequence, 100)
+            this.showCpuSequence()
           }
         }
       }
