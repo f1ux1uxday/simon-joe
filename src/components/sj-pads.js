@@ -142,16 +142,12 @@ class Pads extends Component {
       return (
         <div id={styles.padContainer}>
           <div className={styles.row}>
-            <div className={classNames(styles.pad, styles.zero)}
-              id='0'></div>
-            <div className={classNames(styles.pad, styles.one)}
-              id='1'></div>
+            <div className={classNames(styles.pad, styles.zero)} id='0'></div>
+            <div className={classNames(styles.pad, styles.one)} id='1'></div>
           </div>
           <div className={styles.row}>
-            <div className={classNames(styles.pad, styles.two)}
-              id='2'></div>
-            <div className={classNames(styles.pad, styles.three)}
-              id='3'></div>
+            <div className={classNames(styles.pad, styles.two)} id='2'></div>
+            <div className={classNames(styles.pad, styles.three)} id='3'></div>
           </div>
         </div>
       )
