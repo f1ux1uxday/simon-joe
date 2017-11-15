@@ -73,7 +73,7 @@ class Pads extends Component {
           console.log('you made a mistake')
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
-          // and iterate through cpuSequence again.
+          // and iterate through cpuSequence again
         }
 
         if (plyrSequence[i] != cpuSequence[i] &&
@@ -82,8 +82,7 @@ class Pads extends Component {
           console.log('strict: you made a mistake')
           this.flushCpuSequence()
           this.showCpuSequence()
-          // Play error sound, switch 'active' to 'cpu'
-          // and iterate through cpuSequence again.
+          // Reset cpuSequence and iterate through
         }
 
         if (i === this.props.turnCount) {

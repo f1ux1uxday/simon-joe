@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import 'normalize.css'
 
+import './styles/App.css'
 import Header from './components/sj-header'
 import Pads from './components/sj-pads'
 import Options from './components/sj-options'
