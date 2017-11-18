@@ -16,8 +16,22 @@ class Pads extends Component {
       runCpuSequence(value).then(result => {
         let cpuSequence = this.props.cpuSequence
         let toggle = () => {
-          document.getElementById(cpuSequence[value])
-            .classList.toggle(styles.cpuSelected)
+          if (cpuSequence[value] == 0) {
+            document.getElementById(cpuSequence[value])
+              .classList.toggle(styles.cpu0)
+          }
+          if (cpuSequence[value] == 1) {
+            document.getElementById(cpuSequence[value])
+              .classList.toggle(styles.cpu1)
+          }
+          if (cpuSequence[value] == 2) {
+            document.getElementById(cpuSequence[value])
+              .classList.toggle(styles.cpu2)
+          }
+          if (cpuSequence[value] == 3) {
+            document.getElementById(cpuSequence[value])
+              .classList.toggle(styles.cpu3)
+          }
         }
 
         if (result === 'done') {
@@ -58,7 +72,19 @@ class Pads extends Component {
 
       let targ = e.currentTarget.id
       let activate = () => {
-        document.getElementById(targ).classList.toggle(styles.selected)
+        // Document.getElementById(targ).classList.toggle(styles.selected)
+        if (targ == 0) {
+          document.getElementById(targ).classList.toggle(styles.plyr0)
+        }
+        if (targ == 1) {
+          document.getElementById(targ).classList.toggle(styles.plyr1)
+        }
+        if (targ == 2) {
+          document.getElementById(targ).classList.toggle(styles.plyr2)
+        }
+        if (targ == 3) {
+          document.getElementById(targ).classList.toggle(styles.plyr3)
+        }
       }
 
       activate()

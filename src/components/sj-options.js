@@ -17,12 +17,27 @@ class Options extends Component {
     this.props.setCpuSequence()
     console.log(this.props.cpuSequence)
 
-    let activate = () => {
-      let index = this.props.cpuSequence[0]
-      document.getElementById(index).classList.toggle(styles.cpuSelected)
+    let cpuSequence = this.props.cpuSequence
+    let toggle = () => {
+      if (cpuSequence[0] == 0) {
+        document.getElementById(cpuSequence[0])
+          .classList.toggle(styles.cpu0)
+      }
+      if (cpuSequence[0] == 1) {
+        document.getElementById(cpuSequence[0])
+          .classList.toggle(styles.cpu1)
+      }
+      if (cpuSequence[0] == 2) {
+        document.getElementById(cpuSequence[0])
+          .classList.toggle(styles.cpu2)
+      }
+      if (cpuSequence[0] == 3) {
+        document.getElementById(cpuSequence[0])
+          .classList.toggle(styles.cpu3)
+      }
     }
-    activate()
-    setTimeout(activate, 500)
+    toggle()
+    setTimeout(toggle, 500)
 
     this.props.switchActive()
     // Console.log(this.props.active)
@@ -66,6 +81,7 @@ class Options extends Component {
         </div>
       )
     }
+
     if (this.props.gameOn === 'yes') {
       return (
         <div id={styles.optionContainer}>
@@ -81,6 +97,7 @@ class Options extends Component {
         </div>
       )
     }
+
     if (this.props.gameOn === 'win') {
       return (
         <div id={styles.optionContainer}>

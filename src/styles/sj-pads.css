@@ -19,47 +19,73 @@
   align-items: center;
   height: 28rem;
   width: 28rem;
-  background-color: black;
   border: solid 3.5px teal;
   margin: auto;
+  background-size: 100%;
 }
 
 .zero {
   border-radius: 100% 0% 0% 0%;
+  background: url('http://i.imgs.fyi/img/1wbl.jpg');
+  background-size: 110%
 }
 
 .one {
   border-radius: 0% 100% 0% 0%;
+  background: url(http://i.imgs.fyi/img/1wbq.jpg);
+  background-size: 100%;
 }
 
 .two {
   border-radius: 0% 0% 0% 100%;
+  background: url('http://i.imgs.fyi/img/1wbr.jpg');
+  background-size: 100%;
 }
 
 .three {
   border-radius: 0% 0% 100% 0%;
+  background: url('http://i.imgs.fyi/img/1wbs.jpg');
+  background-size: 100%;
 }
 
-.selected {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 28rem;
-  width: 28rem;
-  background-color: magenta;
-  border: ridge 3.5px turquoise;
-  margin: auto;
+.plyr0 {
+  background: url('http://i.imgs.fyi/img/1wcl.jpg');
+  background-size: 110%;
 }
 
-.cpuSelected {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 28rem;
-  width: 28rem;
-  background-color: turquoise;
-  border: ridge 3.5px magenta;
-  margin: auto;
+.plyr1 {
+  background: url('http://i.imgs.fyi/img/1wcm.jpg');
+  background-size: 100%;
 }
+
+.plyr2 {
+  background: url('http://i.imgs.fyi/img/1wcn.jpg');
+  background-size: 100%;
+}
+
+.plyr3 {
+  background: url('http://i.imgs.fyi/img/1wco.jpg');
+  background-size: 100%;
+}
+
+.cpu0 {
+  background: url('http://i.imgs.fyi/img/1wc9.jpg');
+  background-size: 110%;
+}
+
+.cpu1 {
+  background: url('http://i.imgs.fyi/img/1wcd.jpg');
+  background-size: 100%;
+}
+
+.cpu2 {
+  background: url('http://i.imgs.fyi/img/1wce.jpg');
+  background-size: 100%;
+}
+
+.cpu3 {
+  background: url('http://i.imgs.fyi/img/1wcf.jpg');
+  background-size: 100%;
+}
+
+

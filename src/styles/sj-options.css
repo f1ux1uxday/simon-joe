@@ -1,13 +1,22 @@
-.selected {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 28rem;
-  width: 28rem;
-  background-color: magenta;
-  border: ridge 3.5px turquoise;
-  margin: auto;
+
+.cpu0 {
+  background: url('http://i.imgs.fyi/img/1wc9.jpg');
+  background-size: 110%;
+}
+
+.cpu1 {
+  background: url('http://i.imgs.fyi/img/1wcd.jpg');
+  background-size: 100%;
+}
+
+.cpu2 {
+  background: url('http://i.imgs.fyi/img/1wce.jpg');
+  background-size: 100%;
+}
+
+.cpu3 {
+  background: url('http://i.imgs.fyi/img/1wcf.jpg');
+  background-size: 100%;
 }
 
 #optionContainer {
@@ -24,21 +33,10 @@
   color: teal;
 }
 
-.cpuSelected {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 28rem;
-  width: 28rem;
-  background-color: turquoise;
-  border: ridge 3.5px magenta;
-  margin: auto;
-}
-
 .turnCounter {
   font-size: 2.2rem;
   font-weight: bold;
   padding-right: 3%;
   margin-left: 3.5%;
+  color: teal;
 }
