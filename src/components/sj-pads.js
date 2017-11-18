@@ -86,7 +86,8 @@ class Pads extends Component {
         }
 
         if (i === this.props.turnCount) {
-          if (plyrSequence[i] == cpuSequence[i]) {
+          if (plyrSequence[i] == cpuSequence[i] &&
+            this.props.turnCount < 19) {
             console.log('turn suxxzessful')
             this.props.nextTurn()
 
@@ -94,6 +95,12 @@ class Pads extends Component {
 
             this.props.switchActive()
           }
+
+          if (plyrSequence[i] == cpuSequence[i] &&
+            this.props.turnCount === 19) {
+            this.props.winGame()
+          }
+
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
             this.flushCpuSequence()
@@ -147,6 +154,37 @@ class Pads extends Component {
           <div className={styles.row}>
             <div className={classNames(styles.pad, styles.two)} id='2'></div>
             <div className={classNames(styles.pad, styles.three)} id='3'></div>
+          </div>
+        </div>
+      )
+    }
+
+    if (this.props.gameOn === 'win') {
+      return (
+        <div id={styles.padContainer}>
+          <div className={styles.row}>
+            <div
+              className={classNames(styles.pad, styles.zero)}
+              id='0'
+              onClick={this.props.getInitialState}
+            ></div>
+            <div
+              className={classNames(styles.pad, styles.one)}
+              id='1'
+              onClick={this.props.getInitialState}
+            ></div>
+          </div>
+          <div className={styles.row}>
+            <div
+              className={classNames(styles.pad, styles.two)}
+              id='2'
+              onClick={this.props.getInitialState}
+            ></div>
+            <div
+              className={classNames(styles.pad, styles.three)}
+              id='3'
+              onClick={this.props.getInitialState}
+            ></div>
           </div>
         </div>
       )

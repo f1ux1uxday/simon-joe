@@ -15,7 +15,7 @@ class Options extends Component {
 
     this.props.start()
     this.props.setCpuSequence()
-    // Console.log(this.props.cpuSequence)
+    console.log(this.props.cpuSequence)
 
     let activate = () => {
       let index = this.props.cpuSequence[0]
@@ -55,7 +55,7 @@ class Options extends Component {
             className={styles.optionButton}
             onClick={this.startGame.bind(this)}
           >
-            start
+            normal
           </button>
           <button
             className={styles.optionButton}
@@ -78,6 +78,15 @@ class Options extends Component {
           >
             reset
           </button>
+        </div>
+      )
+    }
+    if (this.props.gameOn === 'win') {
+      return (
+        <div id={styles.optionContainer}>
+          <div className={styles.turnCounter}>
+            <h4> You have earned affection from Simon Joe </h4>
+          </div>
         </div>
       )
     }

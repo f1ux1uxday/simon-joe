@@ -25,6 +25,7 @@ class App extends Component {
     this.resetCpuSequence = this.resetCpuSequence.bind(this)
     this.resetPlyrSequence = this.resetPlyrSequence.bind(this)
     this.getInitialState = this.getInitialState.bind(this)
+    this.winGame = this.winGame.bind(this)
   }
 
   start() {
@@ -91,6 +92,12 @@ class App extends Component {
     })
   }
 
+  winGame() {
+    this.setState({
+      gameOn: 'win',
+    })
+  }
+
   render() {
     return (
       <div>
@@ -107,6 +114,8 @@ class App extends Component {
           setCpuSequence={this.setCpuSequence}
           resetPlyrSequence={this.resetPlyrSequence}
           resetCpuSequence={this.resetCpuSequence}
+          getInitialState={this.getInitialState}
+          winGame={this.winGame}
         />
         <Options
           cpuSequence={this.state.cpuSequence}
