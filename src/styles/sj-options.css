@@ -40,3 +40,39 @@
   margin-left: 3.5%;
   color: teal;
 }
+
+@media only screen
+and (min-device-width: 567px)
+and (orientation: landscape) {
+  #optionContainer {
+    margin-top: .75%;
+  }
+}
+
+@media only screen
+and (min-device-width: 1365px)
+and (orientation: landscape) {
+  .optionButton {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 1919px)
+and (orientation: landscape) {
+  .optionButton {
+    font-size: 3.3rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (orientation: portrait) {
+  #optionContainer {
+    margin-top: 15%;
+  }
+
+  .optionButton {
+    font-size: 5rem;
+  }
+}

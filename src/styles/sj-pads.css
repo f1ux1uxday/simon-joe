@@ -88,4 +88,52 @@
   background-size: 100%;
 }
 
+@media only screen
+and (min-device-width: 567px)
+and (orientation: landscape) {
+  .pad {
+   height: 20rem;
+   width: 20rem;
+  } 
+}
+
+@media only screen
+and (min-device-width: 1023px)
+and (orientation: landscape) {
+  .pad {
+    height: 30rem;
+    width: 30rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 1365px)
+and (orientation: landscape) {
+  .pad {
+    height: 40rem;
+    width: 40rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 1919px) {
+  .pad {
+    height: 40rem;
+    width: 40rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (orientation: portrait) {
+  #padContainer {
+    margin-top: 20%;
+  }
+
+  .pad {
+    height: 42rem;
+    width: 42rem;
+  }
+}
+
 

@@ -14,3 +14,36 @@ html {
     text-align: center;
   }
 
+
+@media only screen
+and (min-device-width: 567px)
+and (orientation: landscape) {
+  .heading {
+    margin-top: 1.75%;
+  }
+}
+
+@media only screen
+and (min-device-width: 1365px)
+and (orientation: landscape) {
+  .heading {
+    font-size: 3.5rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 1919px)
+and (orientation: landscape) {
+  .heading {
+    font-size: 4rem;
+  }
+}
+
+@media only screen
+and (min-device-height: 320px)
+and (orientation: portrait) {
+  .heading {
+    margin-top: 15%;
+    font-size: 5rem;
+  }
+}
