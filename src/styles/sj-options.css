@@ -76,3 +76,19 @@ and (orientation: portrait) {
     font-size: 5rem;
   }
 }
+
+@media only screen
+and (min-device-height: 412px)
+and (orientation: portrait) {
+  #optionContainer {
+    margin-top: 15%;
+  }
+}
+
+@media only screen
+and (min-device-width: 767px)
+and (orientation: portrait) {
+  #optionContainer {
+    margin-top: 11%;
+  }
+}

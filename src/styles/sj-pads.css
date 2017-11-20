@@ -101,8 +101,8 @@ and (orientation: landscape) {
 and (min-device-width: 1023px)
 and (orientation: landscape) {
   .pad {
-    height: 30rem;
-    width: 30rem;
+    height: 26rem;
+    width: 26rem;
   }
 }
 
@@ -110,13 +110,14 @@ and (orientation: landscape) {
 and (min-device-width: 1365px)
 and (orientation: landscape) {
   .pad {
-    height: 40rem;
-    width: 40rem;
+    height: 35rem;
+    width: 35rem;
   }
 }
 
 @media only screen
-and (min-device-width: 1919px) {
+and (min-device-width: 1919px)
+and (orientation: landscape){
   .pad {
     height: 40rem;
     width: 40rem;
@@ -133,6 +134,27 @@ and (orientation: portrait) {
   .pad {
     height: 42rem;
     width: 42rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 412px)
+and (orientation: portrait) {
+  #padContainer {
+    margin-top: 15%;
+  }
+}
+
+@media only screen
+and (min-device-width: 767px)
+and (orientation: portrait) {
+  #padContainer {
+    margin-top: 11%;
+  }
+
+  .pad {
+    height: 36rem;
+    width: 36rem;
   }
 }
 
