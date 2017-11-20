@@ -101,8 +101,8 @@ and (orientation: landscape) {
 and (min-device-width: 1023px)
 and (orientation: landscape) {
   .pad {
-    height: 24rem;
-    width: 24rem;
+    height: 25rem;
+    width: 25rem;
   }
 }
 
