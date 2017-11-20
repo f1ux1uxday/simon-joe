@@ -58,6 +58,15 @@ and (orientation: landscape) {
 }
 
 @media only screen
+and (min-device-width: 1279px)
+and (orientation: landscape) {
+  #optionContainer {
+    margin-top: 0%;
+  }
+}
+
+
+@media only screen
 and (min-device-width: 1365px)
 and (orientation: landscape) {
   .optionButton {

@@ -110,12 +110,12 @@ and (orientation: landscape) {
 and (min-device-width: 1279px)
 and (orientation: landscape) {
   #padContainer {
-    padding-top: 1%;
+    padding-top: 0%;
   }
 
   .pad {
-    height: 26.5rem;
-    width: 26.5rem;
+    height: 27rem;
+    width: 27rem;
   }
 }
 
