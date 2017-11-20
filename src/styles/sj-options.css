@@ -29,8 +29,8 @@
 
 .optionButton {
   font-size: 1.75rem;
-  background-color: black;
-  color: teal;
+  background-color: #999;
+  color: #111;
 }
 
 .turnCounter {
@@ -38,7 +38,7 @@
   font-weight: bold;
   padding-right: 3%;
   margin-left: 3.5%;
-  color: teal;
+  color: #999;
 }
 
 @media only screen
@@ -91,6 +91,10 @@ and (orientation: portrait) {
 
   .optionButton {
     font-size: 5rem;
+  }
+
+  .turnCounter {
+    font-size: 6rem;
   }
 }
 
