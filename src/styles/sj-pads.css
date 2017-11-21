@@ -104,7 +104,7 @@ and (orientation: landscape) {
   .pad {
    height: 26rem;
    width: 26rem;
-  } 
+  }
 }
 
 @media only screen

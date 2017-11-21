@@ -26,6 +26,9 @@ module.exports = {
           'css-loader?modules,localIdentName="[local]"',
         ],
       }),
+    },{
+      test: /\.mp3$/,
+      use: 'file-loader',
     },],
   },
   plugins: [

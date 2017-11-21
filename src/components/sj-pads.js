@@ -33,14 +33,34 @@ class Pads extends Component {
               .classList.toggle(styles.cpu3)
           }
         }
+        let sound = () => {
+          if (cpuSequence[value] == 0) {
+            let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
+            tone0.play()
+          }
+          if (cpuSequence[value] == 1) {
+            let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
+            tone1.play()
+          }
+          if (cpuSequence[value] == 2) {
+            let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
+            tone2.play()
+          }
+          if (cpuSequence[value] == 3) {
+            let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
+            tone3.play()
+          }
+        }
 
         if (result === 'done') {
           // Console.log('done')
           setTimeout(toggle, 500)
+          sound()
           setTimeout(toggle, 200)
         } else {
           // Console.log(this.props.turnCount + ': ' + value)
           setTimeout(toggle, 500)
+          sound()
           setTimeout(toggle, 200)
           return loop(value + 1)
         }
@@ -87,7 +107,32 @@ class Pads extends Component {
         }
       }
 
+      let sound = () => {
+        if (targ == 0) {
+          let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
+          tone0.crossOrigin = 'anonymous'
+          tone0.play()
+          console.log('noise')
+        }
+        if (targ == 1) {
+          let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
+          tone1.play()
+          console.log('noise')
+        }
+        if (targ == 2) {
+          let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
+          tone2.play()
+          console.log('noise')
+        }
+        if (targ == 3) {
+          let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
+          tone3.play()
+          console.log('noise')
+        }
+      }
+
       activate()
+      sound()
       setTimeout(activate, 500)
 
       plyrSequence.push(targ)

@@ -36,8 +36,29 @@ class Options extends Component {
           .classList.toggle(styles.cpu3)
       }
     }
+
+    let sound = () => {
+      if (cpuSequence[0] == 0) {
+        let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
+        tone0.crossOrigin = 'anonymous'
+        tone0.play()
+      }
+      if (cpuSequence[0] == 1) {
+        let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
+        tone1.play()
+      }
+      if (cpuSequence[0] == 2) {
+        let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
+        tone2.play()
+      }
+      if (cpuSequence[0] == 3) {
+        let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
+        tone3.play()
+      }
+    }
     toggle()
-    setTimeout(toggle, 500)
+    sound()
+    setTimeout(toggle, 600)
 
     this.props.switchActive()
     // Console.log(this.props.active)
