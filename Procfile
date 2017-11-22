@@ -1,1 +1,1 @@
-web: webpack
+web: npm run build
