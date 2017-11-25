@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
-    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node simonserver.js",
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node simonserver.js"
   },
   "author": "Lucas Dayton",
   "license": "ISC",
