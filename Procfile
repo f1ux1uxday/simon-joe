@@ -1,1 +1,1 @@
-web: ./src/sj-server.js
+web: node ./src/sj-server.js
