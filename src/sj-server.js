@@ -3,7 +3,7 @@
 'use strict';
 
 /* eslint global-require: off, import/order: off, no-console: off */
-require('../lib/polyfills');
+require('../node_modules/webpack-dev-server/lib/polyfills');
 
 const debug = require('debug')('webpack-dev-server');
 const fs = require('fs');
@@ -12,8 +12,8 @@ const path = require('path');
 const importLocal = require('import-local');
 const open = require('opn');
 const portfinder = require('portfinder');
-const addDevServerEntrypoints = require('../lib/util/addDevServerEntrypoints');
-const createDomain = require('../lib/util/createDomain'); // eslint-disable-line
+const addDevServerEntrypoints = require('../node_modules/webpack-dev-server/lib/util/addDevServerEntrypoints');
+const createDomain = require('../node_modules/webpack-dev-server/lib/util/createDomain'); // eslint-disable-line
 
 // Prefer the local installation of webpack-dev-server
 if (importLocal(__filename)) {
@@ -21,11 +21,11 @@ if (importLocal(__filename)) {
   return;
 }
 
-const Server = require('../lib/Server');
+const Server = require('../node_modules/webpack-dev-server/lib/Server');
 const webpack = require('webpack'); // eslint-disable-line
 
 function versionInfo() {
-  return `webpack-dev-server ${require('../package.json').version}\n` +
+  return `webpack-dev-server ${require('../node_modules/webpack-dev-server/package.json').version}\n` +
   `webpack ${require('webpack/package.json').version}`;
 }
 
@@ -380,7 +380,7 @@ function startDevServer(webpackOptions, options) {
   try {
     server = new Server(compiler, options);
   } catch (e) {
-    const OptionsValidationError = require('../lib/OptionsValidationError');
+    const OptionsValidationError = require('../node_modules/webpack-dev-server/lib/OptionsValidationError');
     if (e instanceof OptionsValidationError) {
       console.error(colorError(options.stats.colors, e.message));
           process.exit(1); // eslint-disable-line
