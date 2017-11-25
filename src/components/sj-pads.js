@@ -138,10 +138,12 @@ class Pads extends Component {
       plyrSequence.push(targ)
       // Then check to see if plyrSequence matches cpuSequence
       for (let i = 0; i < plyrSequence.length; i++) {
+        let toneError = new Audio(require('../assets/simonSoundsErr.mp3'))
 
         if (plyrSequence[i] != cpuSequence[i] &&
           this.props.strict === 'off') {
           console.log('you made a mistake')
+          toneError.play()
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again
@@ -151,6 +153,7 @@ class Pads extends Component {
           i !== this.props.turnCount &&
           this.props.strict === 'on') {
           console.log('strict: you made a mistake')
+          toneError.play()
           this.flushCpuSequence()
           this.showCpuSequence()
           // Reset cpuSequence and iterate through
@@ -174,6 +177,7 @@ class Pads extends Component {
 
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
+            toneError.play()
             this.flushCpuSequence()
             this.showCpuSequence()
           }
