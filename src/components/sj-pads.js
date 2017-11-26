@@ -108,42 +108,56 @@ class Pads extends Component {
       }
 
       let sound = () => {
-        if (targ == 0) {
+        if (targ == 0 && cpuSequence[plyrSequence.length] == 0) {
           let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
           tone0.crossOrigin = 'anonymous'
           tone0.play()
-          console.log('noise')
+          console.log('noise: ' + targ + ' @ index ' + this.props.turnCount + ' : ' + cpuSequence[this.props.turnCount] + ' / ' + plyrSequence.length)
         }
-        if (targ == 1) {
+        if (targ == 0 && cpuSequence[plyrSequence.length] != 0) {
+          let tone0 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          tone0.play()
+        }
+        if (targ == 1 && cpuSequence[plyrSequence.length] == 1) {
           let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
           tone1.play()
           console.log('noise')
         }
-        if (targ == 2) {
+        if (targ == 1 && cpuSequence[plyrSequence.length] != 1) {
+          let tone1 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          tone1.play()
+        }
+        if (targ == 2 && cpuSequence[plyrSequence.length] == 2) {
           let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
           tone2.play()
           console.log('noise')
         }
-        if (targ == 3) {
+        if (targ == 2 && cpuSequence[plyrSequence.length] != 2) {
+          let tone2 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          tone2.play()
+        }
+        if (targ == 3 && cpuSequence[plyrSequence.length] == 3) {
           let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
           tone3.play()
           console.log('noise')
         }
+        if (targ == 3 && cpuSequence[plyrSequence.length] != 3) {
+          let tone3 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          tone3.play()
+        }
       }
 
-      activate()
       sound()
+      activate()
       setTimeout(activate, 500)
 
       plyrSequence.push(targ)
       // Then check to see if plyrSequence matches cpuSequence
       for (let i = 0; i < plyrSequence.length; i++) {
-        let toneError = new Audio(require('../assets/simonSoundsErr.mp3'))
 
         if (plyrSequence[i] != cpuSequence[i] &&
           this.props.strict === 'off') {
           console.log('you made a mistake')
-          toneError.play()
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again
@@ -153,7 +167,6 @@ class Pads extends Component {
           i !== this.props.turnCount &&
           this.props.strict === 'on') {
           console.log('strict: you made a mistake')
-          toneError.play()
           this.flushCpuSequence()
           this.showCpuSequence()
           // Reset cpuSequence and iterate through
@@ -177,7 +190,6 @@ class Pads extends Component {
 
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
-            toneError.play()
             this.flushCpuSequence()
             this.showCpuSequence()
           }
