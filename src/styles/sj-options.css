@@ -32,6 +32,7 @@
   font-size: 1.75rem;
   background-color: #999;
   color: #333;
+  box-shadow: 0px 0px 8px #d8db88;
 }
 
 .turnCounter {
