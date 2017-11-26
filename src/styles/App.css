@@ -1,7 +1,8 @@
 html {
+  font-family: 'Acme', sans-serif;
   font-size: 62.5%;
   box-sizing: border-box;
-  background-color: #111;
+  background-color: #333;
 }
 
 *,

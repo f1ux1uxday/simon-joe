@@ -28,9 +28,10 @@
 }
 
 .optionButton {
+  font-family: 'Acme', sans-serif;
   font-size: 1.75rem;
   background-color: #999;
-  color: #111;
+  color: #333;
 }
 
 .turnCounter {

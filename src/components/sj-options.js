@@ -123,13 +123,13 @@ class Options extends Component {
             className={styles.optionButton}
             onClick={this.startGame.bind(this)}
           >
-            normal
+            NORMAL
           </button>
           <button
             className={styles.optionButton}
             onClick={this.startGameStrict.bind(this)}
           >
-            strict
+            STRICT
           </button>
         </div>
       )
@@ -145,7 +145,7 @@ class Options extends Component {
             className={styles.optionButton}
             onClick={this.resetGame.bind(this)}
           >
-            reset
+            RESET
           </button>
         </div>
       )
