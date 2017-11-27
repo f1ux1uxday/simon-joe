@@ -112,7 +112,6 @@ class Pads extends Component {
           let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
           tone0.crossOrigin = 'anonymous'
           tone0.play()
-          console.log('noise: ' + targ + ' @ index ' + this.props.turnCount + ' : ' + cpuSequence[this.props.turnCount] + ' / ' + plyrSequence.length)
         }
         if (targ == 0 && cpuSequence[plyrSequence.length] != 0) {
           let tone0 = new Audio(require('../assets/simonSoundsErr.mp3'))
@@ -121,7 +120,7 @@ class Pads extends Component {
         if (targ == 1 && cpuSequence[plyrSequence.length] == 1) {
           let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
           tone1.play()
-          console.log('noise')
+          // console.log('noise')
         }
         if (targ == 1 && cpuSequence[plyrSequence.length] != 1) {
           let tone1 = new Audio(require('../assets/simonSoundsErr.mp3'))
@@ -130,7 +129,7 @@ class Pads extends Component {
         if (targ == 2 && cpuSequence[plyrSequence.length] == 2) {
           let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
           tone2.play()
-          console.log('noise')
+          // console.log('noise')
         }
         if (targ == 2 && cpuSequence[plyrSequence.length] != 2) {
           let tone2 = new Audio(require('../assets/simonSoundsErr.mp3'))
@@ -139,7 +138,7 @@ class Pads extends Component {
         if (targ == 3 && cpuSequence[plyrSequence.length] == 3) {
           let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
           tone3.play()
-          console.log('noise')
+          // console.log('noise')
         }
         if (targ == 3 && cpuSequence[plyrSequence.length] != 3) {
           let tone3 = new Audio(require('../assets/simonSoundsErr.mp3'))
@@ -157,7 +156,7 @@ class Pads extends Component {
 
         if (plyrSequence[i] != cpuSequence[i] &&
           this.props.strict === 'off') {
-          console.log('you made a mistake')
+          // console.log('you made a mistake')
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again
@@ -166,7 +165,7 @@ class Pads extends Component {
         if (plyrSequence[i] != cpuSequence[i] &&
           i !== this.props.turnCount &&
           this.props.strict === 'on') {
-          console.log('strict: you made a mistake')
+          // console.log('strict: you made a mistake')
           this.flushCpuSequence()
           this.showCpuSequence()
           // Reset cpuSequence and iterate through
@@ -175,7 +174,7 @@ class Pads extends Component {
         if (i === this.props.turnCount) {
           if (plyrSequence[i] == cpuSequence[i] &&
             this.props.turnCount < 19) {
-            console.log('turn suxxzessful')
+            // console.log('turn suxxzessful')
             this.props.nextTurn()
 
             this.showCpuSequence()
@@ -185,18 +184,19 @@ class Pads extends Component {
 
           if (plyrSequence[i] == cpuSequence[i] &&
             this.props.turnCount === 19) {
+
             this.props.winGame()
           }
 
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
+
             this.flushCpuSequence()
             this.showCpuSequence()
           }
         }
       }
     }
-    // Console.log(this.props.turnCount + ' ' + this.props.active)
   }
 
   padSelector() {
