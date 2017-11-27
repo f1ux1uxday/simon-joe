@@ -92,13 +92,13 @@ class Options extends Component {
             className={styles.optionButton}
             onClick={this.startGame.bind(this)}
           >
-            NORMAL
+            FRIENDLY
           </button>
           <button
             className={styles.optionButton}
             onClick={this.startGameStrict.bind(this)}
           >
-            STRICT
+            HARSH
           </button>
         </div>
       )
