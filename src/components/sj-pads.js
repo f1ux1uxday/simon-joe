@@ -245,7 +245,7 @@ class Pads extends Component {
 
     if (this.props.gameOn === 'win') {
       return (
-        <div 
+        <div
           id={styles.imgContainer}
           onClick={this.props.getInitialState}
         >

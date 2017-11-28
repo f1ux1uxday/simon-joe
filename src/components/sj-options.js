@@ -123,7 +123,9 @@ class Options extends Component {
     if (this.props.gameOn === 'win') {
       return (
         <div id={styles.optionContainer}>
-          <h4 id={styles.endText}> YOU HAVE EARNED AFFECTION FROM SIMON JOE! </h4>
+          <h4 id={styles.endText}>
+            YOU HAVE EARNED AFFECTION FROM SIMON JOE!
+          </h4>
         </div>
       )
     }
