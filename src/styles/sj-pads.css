@@ -16,7 +16,7 @@
   margin-top: 5%;
   border: solid 3.5px #999;
   border-radius: 100%;
-  background: url('../assets/simonWinner.jpg');
+  background: url('../assets/simonWinnerOpt.jpg');
   background-size: 100%;
   height: 56rem;
   width: 56rem;
@@ -34,8 +34,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 28rem;
-  width: 28rem;
   border: solid 3.5px #999;
   margin: auto;
   background-size: 100%;
@@ -44,65 +42,65 @@
 
 .zero {
   border-radius: 100% 0% 0% 0%;
-  background: url('../assets/simon0default.jpg');
+  background: url('../assets/simon0defaultOpt.jpg');
   background-size: 110%
 }
 
 .one {
   border-radius: 0% 100% 0% 0%;
-  background: url('../assets/simon1default.jpg');
+  background: url('../assets/simon1defaultOpt.jpg');
   background-size: 100%;
 }
 
 .two {
   border-radius: 0% 0% 0% 100%;
-  background: url('../assets/simon2default.jpg');
+  background: url('../assets/simon2defaultOpt.jpg');
   background-size: 100%;
 }
 
 .three {
   border-radius: 0% 0% 100% 0%;
-  background: url('../assets/simon3default.jpg');
+  background: url('../assets/simon3defaultOpt.jpg');
   background-size: 100%;
 }
 
 .plyr0 {
-  background: url('../assets/simon0plyrselect.jpg');
+  background: url('../assets/simon0plyrselectOpt.jpg');
   background-size: 110%;
 }
 
 .plyr1 {
-  background: url('../assets/simon1plyrselect.jpg');
+  background: url('../assets/simon1plyrselectOpt.jpg');
   background-size: 100%;
 }
 
 .plyr2 {
-  background: url('../assets/simon2plyrselect.jpg');
+  background: url('../assets/simon2plyrselectOpt.jpg');
   background-size: 100%;
 }
 
 .plyr3 {
-  background: url('../assets/simon3plyrselect.jpg');
+  background: url('../assets/simon3plyrselectOpt.jpg');
   background-size: 100%;
 }
 
 .cpu0 {
-  background: url('../assets/simon0cpuselect.jpg');
+  background: url('../assets/simon0cpuselectOpt.jpg');
   background-size: 110%;
 }
 
 .cpu1 {
-  background: url('../assets/simon1cpuselect.jpg');
+  background: url('../assets/simon1cpuselectOpt.jpg');
   background-size: 100%;
 }
 
 .cpu2 {
-  background: url('../assets/simon2cpuselect.jpg');
+  background: url('../assets/simon2cpuselectOpt.jpg');
   background-size: 100%;
 }
 
 .cpu3 {
-  background: url('../assets/simon3cpuselect.jpg');
+  background: url('../assets/simon3cpuselectOpt.jpg');
   background-size: 100%;
 }
 

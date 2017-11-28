@@ -1,21 +1,21 @@
 
 .cpu0 {
-  background: url('../assets/simon0cpuselect.jpg');
+  background: url('../assets/simon0cpuselectOpt.jpg');
   background-size: 110%;
 }
 
 .cpu1 {
-  background: url('../assets/simon1cpuselect.jpg');
+  background: url('../assets/simon1cpuselectOpt.jpg');
   background-size: 100%;
 }
 
 .cpu2 {
-  background: url('../assets/simon2cpuselect.jpg');
+  background: url('../assets/simon2cpuselectOpt.jpg');
   background-size: 100%;
 }
 
 .cpu3 {
-  background: url('../assets/simon3cpuselect.jpg');
+  background: url('../assets/simon3cpuselectOpt.jpg');
   background-size: 100%;
 }
 
