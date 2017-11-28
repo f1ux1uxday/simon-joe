@@ -26,20 +26,20 @@ class Options extends Component {
   sound() {
     let cpuSequence = this.props.cpuSequence
     if (cpuSequence[0] == 0) {
-      let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
+      let tone0 = new Audio(require('../assets/simonSounds0.ogg'))
       tone0.crossOrigin = 'anonymous'
       tone0.play()
     }
     if (cpuSequence[0] == 1) {
-      let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
+      let tone1 = new Audio(require('../assets/simonSounds1.ogg'))
       tone1.play()
     }
     if (cpuSequence[0] == 2) {
-      let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
+      let tone2 = new Audio(require('../assets/simonSounds2.ogg'))
       tone2.play()
     }
     if (cpuSequence[0] == 3) {
-      let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
+      let tone3 = new Audio(require('../assets/simonSounds3.ogg'))
       tone3.play()
     }
   }

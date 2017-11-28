@@ -35,19 +35,19 @@ class Pads extends Component {
         }
         let sound = () => {
           if (cpuSequence[value] == 0) {
-            let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
+            let tone0 = new Audio(require('../assets/simonSounds0.ogg'))
             tone0.play()
           }
           if (cpuSequence[value] == 1) {
-            let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
+            let tone1 = new Audio(require('../assets/simonSounds1.ogg'))
             tone1.play()
           }
           if (cpuSequence[value] == 2) {
-            let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
+            let tone2 = new Audio(require('../assets/simonSounds2.ogg'))
             tone2.play()
           }
           if (cpuSequence[value] == 3) {
-            let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
+            let tone3 = new Audio(require('../assets/simonSounds3.ogg'))
             tone3.play()
           }
         }
@@ -109,36 +109,36 @@ class Pads extends Component {
 
       let sound = () => {
         if (targ == 0 && cpuSequence[plyrSequence.length] == 0) {
-          let tone0 = new Audio(require('../assets/simonSounds0.mp3'))
+          let tone0 = new Audio(require('../assets/simonSounds0.ogg'))
           tone0.crossOrigin = 'anonymous'
           tone0.play()
         }
         if (targ == 0 && cpuSequence[plyrSequence.length] != 0) {
-          let tone0 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          let tone0 = new Audio(require('../assets/simonSoundsErr.ogg'))
           tone0.play()
         }
         if (targ == 1 && cpuSequence[plyrSequence.length] == 1) {
-          let tone1 = new Audio(require('../assets/simonSounds1.mp3'))
+          let tone1 = new Audio(require('../assets/simonSounds1.ogg'))
           tone1.play()
         }
         if (targ == 1 && cpuSequence[plyrSequence.length] != 1) {
-          let tone1 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          let tone1 = new Audio(require('../assets/simonSoundsErr.ogg'))
           tone1.play()
         }
         if (targ == 2 && cpuSequence[plyrSequence.length] == 2) {
-          let tone2 = new Audio(require('../assets/simonSounds2.mp3'))
+          let tone2 = new Audio(require('../assets/simonSounds2.ogg'))
           tone2.play()
         }
         if (targ == 2 && cpuSequence[plyrSequence.length] != 2) {
-          let tone2 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          let tone2 = new Audio(require('../assets/simonSoundsErr.ogg'))
           tone2.play()
         }
         if (targ == 3 && cpuSequence[plyrSequence.length] == 3) {
-          let tone3 = new Audio(require('../assets/simonSounds3.mp3'))
+          let tone3 = new Audio(require('../assets/simonSounds3.ogg'))
           tone3.play()
         }
         if (targ == 3 && cpuSequence[plyrSequence.length] != 3) {
-          let tone3 = new Audio(require('../assets/simonSoundsErr.mp3'))
+          let tone3 = new Audio(require('../assets/simonSoundsErr.ogg'))
           tone3.play()
         }
       }
