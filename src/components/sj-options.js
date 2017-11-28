@@ -123,9 +123,7 @@ class Options extends Component {
     if (this.props.gameOn === 'win') {
       return (
         <div id={styles.optionContainer}>
-          <div className={styles.turnCounter}>
-            <h4> You have earned affection from Simon Joe </h4>
-          </div>
+          <h4 id={styles.endText}> YOU HAVE EARNED AFFECTION FROM SIMON JOE! </h4>
         </div>
       )
     }

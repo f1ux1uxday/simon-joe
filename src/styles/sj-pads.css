@@ -7,6 +7,22 @@
   margin: auto;
 }
 
+#imgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 5%;
+  border: solid 3.5px #999;
+  border-radius: 100%;
+  background: url('../assets/simonWinner.jpg');
+  background-size: 100%;
+  height: 56rem;
+  width: 56rem;
+  box-shadow: 0px 0px 15px #d8db88;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -94,8 +110,13 @@
 and (min-device-width: 567px)
 and (orientation: landscape) {
   .pad {
-   height: 20rem;
-   width: 20rem;
+    height: 20rem;
+    width: 20rem;
+  }
+
+  #imgContainer {
+    height: 40rem;
+    width: 40rem;
   }
 }
 
@@ -105,6 +126,11 @@ and (orientation: landscape) {
   .pad {
    height: 26rem;
    width: 26rem;
+  }
+
+  #imgContainer {
+    height: 52rem;
+    width: 52rem;
   }
 }
 
@@ -119,6 +145,11 @@ and (orientation: landscape) {
     height: 27rem;
     width: 27rem;
   }
+
+  #imgContainer {
+    height: 54rem;
+    width: 54rem;
+  }
 }
 
 @media only screen
@@ -128,6 +159,10 @@ and (orientation: landscape) {
     height: 35rem;
     width: 35rem;
   }
+  #imgContainer {
+    height: 70rem;
+    width: 70rem;
+  }
 }
 
 @media only screen
@@ -136,6 +171,11 @@ and (orientation: landscape){
   .pad {
     height: 38rem;
     width: 38rem;
+  }
+  #imgContainer {
+    height: 76rem;
+    width: 76rem;
+    margin-top: 4%;
   }
 }
 
@@ -150,12 +190,21 @@ and (orientation: portrait) {
     height: 42rem;
     width: 42rem;
   }
+
+  #imgContainer {
+    margin-top: 15%;
+    height: 84rem;
+    width: 84rem;
+  }
 }
 
 @media only screen
 and (min-device-width: 412px)
 and (orientation: portrait) {
   #padContainer {
+    margin-top: 15%;
+  }
+  #imgContainer {
     margin-top: 15%;
   }
 }
@@ -166,9 +215,33 @@ and (orientation: portrait) {
   #padContainer {
     margin-top: 11%;
   }
+  #imgContainer {
+    margin-top: 12%;
+    height: 84rem;
+    width: 84rem;
+  }
 
   .pad {
-    height: 36rem;
-    width: 36rem;
+    height: 42rem;
+    width: 42rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 1050px)
+and (orientation: portrait) {
+  #padContainer {
+    margin-top: 15%;
+  }
+
+  .pad {
+    height: 43rem;
+    width: 43rem;
+  }
+
+  #imgContainer {
+    margin-top: 16%;
+    height: 87rem;
+    width: 87rem
   }
 }

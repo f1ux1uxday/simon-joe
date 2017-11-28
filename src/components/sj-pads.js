@@ -245,32 +245,12 @@ class Pads extends Component {
 
     if (this.props.gameOn === 'win') {
       return (
-        <div id={styles.padContainer}>
-          <div className={styles.row}>
-            <div
-              className={classNames(styles.pad, styles.zero)}
-              id='0'
-              onClick={this.props.getInitialState}
-            ></div>
-            <div
-              className={classNames(styles.pad, styles.one)}
-              id='1'
-              onClick={this.props.getInitialState}
-            ></div>
-          </div>
-          <div className={styles.row}>
-            <div
-              className={classNames(styles.pad, styles.two)}
-              id='2'
-              onClick={this.props.getInitialState}
-            ></div>
-            <div
-              className={classNames(styles.pad, styles.three)}
-              id='3'
-              onClick={this.props.getInitialState}
-            ></div>
-          </div>
+        <div 
+          id={styles.imgContainer}
+          onClick={this.props.getInitialState}
+        >
         </div>
+
       )
     }
   }

@@ -84,3 +84,11 @@ and (orientation: portrait) {
     margin-top: 10%;
   }
 }
+
+@media only screen
+and (min-device-width: 1050px)
+and (orientation: portrait) {
+  .heading {
+    margin-top: 25%;
+  }
+}
