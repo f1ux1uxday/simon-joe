@@ -44,7 +44,6 @@ module.exports = {
       base: path.resolve(__dirname),
       inline: true,
       minify: true,
-      extract: true,
       dest: 'index.html',
     }),
   ],
