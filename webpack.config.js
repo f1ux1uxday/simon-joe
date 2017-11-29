@@ -42,7 +42,6 @@ module.exports = {
     new CriticalPlugin({
       src: 'index.html',
       base: path.resolve(__dirname),
-      css: ['styles.css'],
       inline: true,
       minify: true,
       dest: 'index.html',
