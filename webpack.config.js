@@ -41,7 +41,7 @@ module.exports = {
     }),
     new HtmlCriticalPlugin({
       src: 'index.html',
-      base: path.resolve(__dirname),
+      base: path.resolve(__dirname, 'dist/'),
       inline: true,
       inlineImages: true,
       minify: true,
