@@ -43,7 +43,6 @@ module.exports = {
       src: 'index.html',
       base: path.resolve(__dirname, 'dist/'),
       inline: true,
-      inlineImages: true,
       minify: true,
       dest: 'index.html',
     }),
