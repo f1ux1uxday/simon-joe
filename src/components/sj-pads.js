@@ -153,7 +153,6 @@ class Pads extends Component {
 
         if (plyrSequence[i] != cpuSequence[i] &&
           this.props.strict === 'off') {
-          // console.log('you made a mistake')
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again
@@ -162,7 +161,6 @@ class Pads extends Component {
         if (plyrSequence[i] != cpuSequence[i] &&
           i !== this.props.turnCount &&
           this.props.strict === 'on') {
-          // console.log('strict: you made a mistake')
           this.flushCpuSequence()
           this.showCpuSequence()
           // Reset cpuSequence and iterate through
@@ -171,7 +169,6 @@ class Pads extends Component {
         if (i === this.props.turnCount) {
           if (plyrSequence[i] == cpuSequence[i] &&
             this.props.turnCount < 19) {
-            // console.log('turn suxxzessful')
             this.props.nextTurn()
 
             this.showCpuSequence()
