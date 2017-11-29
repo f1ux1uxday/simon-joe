@@ -2,12 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link 
-      href="https://fonts.googleapis.com/css?family=Autour+One"
-      rel="stylesheet"
-    >
+    <style type="text/css">
+  @font-face{font-family:'Autour One';font-style:normal;font-weight:400;src:local('Autour One Regular'),local('AutourOne-Regular'),url(https://fonts.gstatic.com/s/autourone/v7/7LzkKwczNE2R2ZQSt90y1S3USBnSvpkopQaUR-2r7iU.ttf) format('truetype')}html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-family:Autour One,sans-serif;font-size:62.5%;box-sizing:border-box;background-color:#111}body{display:flex;justify-content:center;align-content:center;margin:auto}*,:after,:before{box-sizing:inherit}html{font-size:62.5%;box-sizing:border-box}*,:after,:before{box-sizing:inherit}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Autour+One" rel="preload" as="style" onload="this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet"></noscript>
     <title>Simon Joe</title>
-  <link href="styles.css" rel="stylesheet"></head>
+  <link href="styles.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="styles.css" rel="stylesheet"></noscript>
+<script>!function(e){"use strict";var t=function(t,n,r){function o(e){if(i.body)return e();setTimeout(function(){o(e)})}function a(){d.addEventListener&&d.removeEventListener("load",a),d.media=r||"all"}var l,i=e.document,d=i.createElement("link");if(n)l=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;l=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){l.parentNode.insertBefore(d,n?l:l.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",a),d.onloadcssdefined=f,f(a),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);</script></head>
   <body>
     <div id="root"></div>
   <script type="text/javascript" src="bundle.js"></script></body>

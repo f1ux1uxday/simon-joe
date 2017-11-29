@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin
 
 module.exports = {
   entry: './src/index.js',
@@ -37,6 +38,12 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: 'styles.css',
+    }),
+    new CriticalPlugin({
+      src: 'index.html',
+      inline: true,
+      minify: true,
+      dest: 'index.html',
     }),
   ],
 }
