@@ -27,7 +27,7 @@ module.exports = {
         ],
       }),
     },{
-      test: /\.(mp3|jpg)$/,
+      test: /\.(ogg|jpg)$/,
       use: 'file-loader',
     },],
   },
