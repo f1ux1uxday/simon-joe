@@ -42,9 +42,13 @@ module.exports = {
     new HtmlCriticalPlugin({
       src: 'index.html',
       base: path.resolve(__dirname, 'dist/'),
+      extract: true,
       inline: true,
       minify: true,
       dest: 'index.html',
+      penthouse: {
+        blockJSRequests: false,
+      }
     }),
   ],
 }
