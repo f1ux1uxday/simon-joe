@@ -41,7 +41,6 @@ module.exports = {
     }),
     new CriticalPlugin({
       src: 'index.html',
-      inline: false,
       minify: true,
       dest: 'index.html',
     }),
