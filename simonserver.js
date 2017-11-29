@@ -1,6 +1,6 @@
 var path = require('path');
-var express = require('express');
 var compression = require('compression')
+var express = require('express');
 
 var app = express();
 

@@ -40,12 +40,12 @@ module.exports = {
       filename: 'styles.css',
     }),
     new CriticalPlugin({
-      src: './index.html',
+      src: 'index.html',
       base: path.resolve(__dirname),
-      css: ['./styles.css'],
+      css: ['styles.css'],
       inline: true,
       minify: true,
-      dest: './index.html',
+      dest: 'index.html',
     }),
   ],
 }
