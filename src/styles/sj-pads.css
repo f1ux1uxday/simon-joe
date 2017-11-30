@@ -119,8 +119,11 @@ and (orientation: landscape) {
 }
 
 @media only screen
-and (min-device-width: 1023px)
+and (min-device-width: 975px)
 and (orientation: landscape) {
+  #padContainer {
+    margin-top: 5.5%;
+  }
   .pad {
    height: 26rem;
    width: 26rem;
@@ -136,7 +139,7 @@ and (orientation: landscape) {
 and (min-device-width: 1279px)
 and (orientation: landscape) {
   #padContainer {
-    padding-top: 0%;
+    padding-top: 2%;
   }
 
   .pad {

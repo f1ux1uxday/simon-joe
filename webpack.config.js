@@ -48,7 +48,7 @@ module.exports = {
       dest: 'index.html',
       penthouse: {
         blockJSRequests: false,
-      }
+      },
     }),
   ],
 }

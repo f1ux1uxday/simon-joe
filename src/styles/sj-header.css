@@ -46,7 +46,7 @@ and (orientation: landscape) {
 and (min-device-width: 1365px)
 and (orientation: landscape) {
   .heading {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
   }
 }
 

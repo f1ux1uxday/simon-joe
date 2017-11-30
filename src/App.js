@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'normalize.css'
 
 import './styles/App.css'
+import Intro from './components/sj-intro'
 import Header from './components/sj-header'
 import Pads from './components/sj-pads'
 import Options from './components/sj-options'
@@ -13,10 +14,11 @@ class App extends Component {
       cpuSequence: [],
       plyrSequence: [],
       active: 'cpu',
-      gameOn: 'no',
+      gameOn: 'intro',
       strict: 'off',
       turnCount: 0,
     }
+    this.enter = this.enter.bind(this)
     this.start = this.start.bind(this)
     this.strictStart = this.strictStart.bind(this)
     this.nextTurn = this.nextTurn.bind(this)
@@ -26,6 +28,12 @@ class App extends Component {
     this.resetPlyrSequence = this.resetPlyrSequence.bind(this)
     this.getInitialState = this.getInitialState.bind(this)
     this.winGame = this.winGame.bind(this)
+  }
+
+  enter() {
+    this.setState({
+      gameOn: 'no',
+    })
   }
 
   start() {
@@ -102,6 +110,10 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <Intro
+          gameOn={this.state.gameOn}
+          enter={this.enter}
+        />
         <Pads
           cpuSequence={this.state.cpuSequence}
           plyrSequence={this.state.plyrSequence}
