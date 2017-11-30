@@ -66,23 +66,44 @@ and (orientation: landscape) {
 }
 
 @media only screen
-and (min-device-width: 1250px)
+and (min-device-width: 1279px)
 and (orientation: landscape) {
   .introContainer {
-    margin-top: 5%;
+    margin-top: 2%;
   }
 
   .head {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
   }
 
   .para {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .enterButton {
-    margin-top: 5%;
-    font-size: 2.75rem;
+    margin-top: 2%;
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 1365px)
+and (orientation: landscape) {
+  .introContainer {
+    margin-top: 4%;
+  }
+
+  .head {
+    font-size: 3.5rem;
+  }
+
+  .para {
+    font-size: 2.5rem;
+  }
+
+  .enterButton {
+    margin-top: 5.75%;
+    font-size: 3.5rem;
   }
 }
 
