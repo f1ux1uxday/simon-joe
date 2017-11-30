@@ -61,10 +61,10 @@ and (orientation: landscape) {
 }
 
 @media only screen
-and (min-device-width: 975px)
+and (min-device-width: 1000px)
 and (orientation: landscape) {
   #optionContainer {
-    margin-top: 3.75%
+    margin-top: 3%
   }
 
   #endText {
@@ -73,7 +73,7 @@ and (orientation: landscape) {
 }
 
 @media only screen
-and (min-device-width: 1279px)
+and (min-device-width: 1300px)
 and (orientation: landscape) {
   #optionContainer {
     margin-top: 2%;
@@ -136,10 +136,10 @@ and (orientation: portrait) {
 }
 
 @media only screen
-and (min-device-width: 767px)
+and (min-device-width: 750px)
 and (orientation: portrait) {
   #optionContainer {
-    margin-top: 11%;
+    margin-top: 7%;
   }
 }
 

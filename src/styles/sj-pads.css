@@ -119,37 +119,37 @@ and (orientation: landscape) {
 }
 
 @media only screen
-and (min-device-width: 975px)
+and (min-device-width: 1000px)
 and (orientation: landscape) {
   #padContainer {
-    margin-top: 5.5%;
+    margin-top: 2%;
   }
   .pad {
-   height: 26rem;
-   width: 26rem;
+    height: 29rem;
+    width: 29rem;
   }
 
   #imgContainer {
-    height: 52rem;
-    width: 52rem;
+    height: 58rem;
+    width: 58rem;
   }
 }
 
 @media only screen
-and (min-device-width: 1279px)
+and (min-device-width: 1250px)
 and (orientation: landscape) {
   #padContainer {
     padding-top: 2%;
   }
 
   .pad {
-    height: 27rem;
-    width: 27rem;
+    height: 31rem;
+    width: 31rem;
   }
 
   #imgContainer {
-    height: 54rem;
-    width: 54rem;
+    height: 62rem;
+    width: 62rem;
   }
 }
 

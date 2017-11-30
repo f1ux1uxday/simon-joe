@@ -45,8 +45,12 @@ and (orientation: landscape) {
 }
 
 @media only screen
-and (min-device-width: 975px)
+and (min-device-width: 1000px)
 and (orientation: landscape) {
+  .introContainer {
+    margin-top: 8%;
+  }
+
   .head {
     font-size: 2.5rem;
   }
@@ -56,29 +60,29 @@ and (orientation: landscape) {
   }
 
   .enterButton {
-    margin-top: 3%;
-    font-size: 2.5rem;
+    margin-top: 8%;
+    font-size: 2.25rem;
   }
 }
 
 @media only screen
-and (min-device-width: 1300px)
+and (min-device-width: 1250px)
 and (orientation: landscape) {
   .introContainer {
     margin-top: 5%;
   }
 
   .head {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 
   .para {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .enterButton {
     margin-top: 5%;
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 }
 
@@ -103,3 +107,35 @@ and (orientation: landscape) {
   }
 }
 
+@media only screen
+and (min-device-width: 320px)
+and (orientation: portrait) {
+  .introContainer {
+    margin-top: 14%;
+  }
+
+  .head {
+    font-size: 3.75rem;
+  }
+
+  .para {
+    font-size: 2.75rem;
+  }
+
+  .enterButton {
+    font-size: 5rem;
+    margin-top: 19%;
+  }
+}
+
+@media only screen
+and (min-device-width: 750px)
+and (orientation: portrait) {
+  .introContainer {
+    margin-top: 10%;
+  }
+
+  .enterButton {
+    margin-top: 13  %;
+  }
+}
