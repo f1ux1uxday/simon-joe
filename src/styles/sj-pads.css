@@ -130,6 +130,7 @@ and (orientation: landscape) {
   }
 
   #imgContainer {
+    margin-top: 2%;
     height: 58rem;
     width: 58rem;
   }
@@ -148,6 +149,7 @@ and (orientation: landscape) {
   }
 
   #imgContainer {
+    margin-top: 0%;
     height: 54rem;
     width: 54rem;
   }
@@ -164,7 +166,9 @@ and (orientation: landscape) {
     height: 36rem;
     width: 36rem;
   }
+
   #imgContainer {
+    margin-top: 8%;
     height: 72rem;
     width: 72rem;
   }

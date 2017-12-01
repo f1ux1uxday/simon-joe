@@ -68,7 +68,8 @@ and (orientation: landscape) {
   }
 
   #endText {
-    font-size: 1.75rem;
+    margin-top: -1.5%;
+    font-size: 1.85rem;
   }
 }
 
