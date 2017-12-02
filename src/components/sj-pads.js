@@ -168,7 +168,7 @@ class Pads extends Component {
 
         if (i === this.props.turnCount) {
           if (plyrSequence[i] == cpuSequence[i] &&
-            this.props.turnCount < 3) {
+            this.props.turnCount < 19) {
             this.props.nextTurn()
 
             this.showCpuSequence()
@@ -177,7 +177,7 @@ class Pads extends Component {
           }
 
           if (plyrSequence[i] == cpuSequence[i] &&
-            this.props.turnCount === 3) {
+            this.props.turnCount === 19) {
 
             this.props.winGame()
           }
