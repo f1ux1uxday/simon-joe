@@ -21,24 +21,23 @@ class Pads extends Component {
     const loop = value =>
       runCpuSequence(value).then(result => {
         let cpuSequence = this.props.cpuSequence
+        let activatePad = document.getElementById(cpuSequence[value]).classList
+
         let toggle = () => {
           if (cpuSequence[value] == 0) {
-            document.getElementById(cpuSequence[value])
-              .classList.toggle(styles.cpu0)
+            activatePad.toggle(styles.cpu0)
           }
           if (cpuSequence[value] == 1) {
-            document.getElementById(cpuSequence[value])
-              .classList.toggle(styles.cpu1)
+            activatePad.toggle(styles.cpu1)
           }
           if (cpuSequence[value] == 2) {
-            document.getElementById(cpuSequence[value])
-              .classList.toggle(styles.cpu2)
+            activatePad.toggle(styles.cpu2)
           }
           if (cpuSequence[value] == 3) {
-            document.getElementById(cpuSequence[value])
-              .classList.toggle(styles.cpu3)
+            activatePad.toggle(styles.cpu3)
           }
         }
+
         let sound = () => {
           if (cpuSequence[value] == 0) {
             tone0.play()
@@ -94,18 +93,18 @@ class Pads extends Component {
 
       let targ = e.currentTarget.id
       let activate = () => {
-        // Document.getElementById(targ).classList.toggle(styles.selected)
+        let targetPad = document.getElementById(targ).classList
         if (targ == 0) {
-          document.getElementById(targ).classList.toggle(styles.plyr0)
+          targetPad.toggle(styles.plyr0)
         }
         if (targ == 1) {
-          document.getElementById(targ).classList.toggle(styles.plyr1)
+          targetPad.toggle(styles.plyr1)
         }
         if (targ == 2) {
-          document.getElementById(targ).classList.toggle(styles.plyr2)
+          targetPad.toggle(styles.plyr2)
         }
         if (targ == 3) {
-          document.getElementById(targ).classList.toggle(styles.plyr3)
+          targetPad.toggle(styles.plyr3)
         }
       }
 
