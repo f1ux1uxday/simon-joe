@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import styles from '../styles/sj-pads.css'
 
+let tone0 = new Audio(require('../assets/simonSounds0.ogg'))
+let tone1 = new Audio(require('../assets/simonSounds1.ogg'))
+let tone2 = new Audio(require('../assets/simonSounds2.ogg'))
+let tone3 = new Audio(require('../assets/simonSounds3.ogg'))
+let toneX = new Audio(require('../assets/simonSoundsErr.ogg'))
+
 class Pads extends Component {
 
   showCpuSequence() {
@@ -35,19 +41,15 @@ class Pads extends Component {
         }
         let sound = () => {
           if (cpuSequence[value] == 0) {
-            let tone0 = new Audio(require('../assets/simonSounds0.ogg'))
             tone0.play()
           }
           if (cpuSequence[value] == 1) {
-            let tone1 = new Audio(require('../assets/simonSounds1.ogg'))
             tone1.play()
           }
           if (cpuSequence[value] == 2) {
-            let tone2 = new Audio(require('../assets/simonSounds2.ogg'))
             tone2.play()
           }
           if (cpuSequence[value] == 3) {
-            let tone3 = new Audio(require('../assets/simonSounds3.ogg'))
             tone3.play()
           }
         }
@@ -79,7 +81,7 @@ class Pads extends Component {
       this.props.cpuSequence[i] = randomNumber
     }
     this.props.setCpuSequence()
-    console.log(this.props.cpuSequence)
+    // Console.log(this.props.cpuSequence)
   }
 
   clickHandle(e) {
@@ -108,37 +110,19 @@ class Pads extends Component {
       }
 
       let sound = () => {
-        if (targ == 0 && cpuSequence[plyrSequence.length] == 0) {
-          let tone0 = new Audio(require('../assets/simonSounds0.ogg'))
-          tone0.crossOrigin = 'anonymous'
-          tone0.play()
+        if (targ != cpuSequence[plyrSequence.length]) {
+          toneX.play()
         }
-        if (targ == 0 && cpuSequence[plyrSequence.length] != 0) {
-          let tone0 = new Audio(require('../assets/simonSoundsErr.ogg'))
+        if (targ == 0 && cpuSequence[plyrSequence.length] == 0) {
           tone0.play()
         }
         if (targ == 1 && cpuSequence[plyrSequence.length] == 1) {
-          let tone1 = new Audio(require('../assets/simonSounds1.ogg'))
-          tone1.play()
-        }
-        if (targ == 1 && cpuSequence[plyrSequence.length] != 1) {
-          let tone1 = new Audio(require('../assets/simonSoundsErr.ogg'))
           tone1.play()
         }
         if (targ == 2 && cpuSequence[plyrSequence.length] == 2) {
-          let tone2 = new Audio(require('../assets/simonSounds2.ogg'))
-          tone2.play()
-        }
-        if (targ == 2 && cpuSequence[plyrSequence.length] != 2) {
-          let tone2 = new Audio(require('../assets/simonSoundsErr.ogg'))
           tone2.play()
         }
         if (targ == 3 && cpuSequence[plyrSequence.length] == 3) {
-          let tone3 = new Audio(require('../assets/simonSounds3.ogg'))
-          tone3.play()
-        }
-        if (targ == 3 && cpuSequence[plyrSequence.length] != 3) {
-          let tone3 = new Audio(require('../assets/simonSoundsErr.ogg'))
           tone3.play()
         }
       }
@@ -150,14 +134,15 @@ class Pads extends Component {
       plyrSequence.push(targ)
       // Then check to see if plyrSequence matches cpuSequence
       for (let i = 0; i < plyrSequence.length; i++) {
-
+        // If wrong in friendly mode...
         if (plyrSequence[i] != cpuSequence[i] &&
           this.props.strict === 'off') {
           this.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again
         }
-
+        // If wrong in harsh mode, turnCount momentarily exceeds length
+        // of plyrSequence when turnCount resets
         if (plyrSequence[i] != cpuSequence[i] &&
           i !== this.props.turnCount &&
           this.props.strict === 'on') {
