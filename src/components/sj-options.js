@@ -7,46 +7,7 @@ class Options extends Component {
     this.props.getInitialState()
   }
 
-  toggle() {
-    let cpuSequence = this.props.cpuSequence
-    if (cpuSequence[0] == 0) {
-      document.getElementById(cpuSequence[0]).classList.toggle(styles.cpu0)
-    }
-    if (cpuSequence[0] == 1) {
-      document.getElementById(cpuSequence[0]).classList.toggle(styles.cpu1)
-    }
-    if (cpuSequence[0] == 2) {
-      document.getElementById(cpuSequence[0]).classList.toggle(styles.cpu2)
-    }
-    if (cpuSequence[0] == 3) {
-      document.getElementById(cpuSequence[0]).classList.toggle(styles.cpu3)
-    }
-  }
-
-  sound() {
-    let cpuSequence = this.props.cpuSequence
-    if (cpuSequence[0] == 0) {
-      let tone0 = new Audio(require('../assets/simonSounds0.ogg'))
-      tone0.crossOrigin = 'anonymous'
-      tone0.play()
-    }
-    if (cpuSequence[0] == 1) {
-      let tone1 = new Audio(require('../assets/simonSounds1.ogg'))
-      tone1.play()
-    }
-    if (cpuSequence[0] == 2) {
-      let tone2 = new Audio(require('../assets/simonSounds2.ogg'))
-      tone2.play()
-    }
-    if (cpuSequence[0] == 3) {
-      let tone3 = new Audio(require('../assets/simonSounds3.ogg'))
-      tone3.play()
-    }
-  }
-
   startGame() {
-    let toggle = this.toggle.bind(this)
-    let sound = this.sound.bind(this)
 
     for (let i = 0; i < 20; i++) {
       let randomNumber = Math.floor(Math.random() * 4)
@@ -57,17 +18,13 @@ class Options extends Component {
     this.props.setCpuSequence()
     console.log(this.props.cpuSequence)
 
-    toggle()
-    sound()
-    setTimeout(toggle, 600)
+    this.props.showCpuSequence()
 
     this.props.switchActive()
     // Console.log(this.props.active)
   }
 
   startGameStrict() {
-    let toggle = this.toggle.bind(this)
-    let sound = this.sound.bind(this)
 
     for (let i = 0; i < 20; i++) {
       let randomNumber = Math.floor(Math.random() * 4)
@@ -77,9 +34,7 @@ class Options extends Component {
     this.props.strictStart()
     this.props.setCpuSequence()
 
-    toggle()
-    sound()
-    setTimeout(toggle, 500)
+    this.props.showCpuSequence()
 
     this.props.switchActive()
   }

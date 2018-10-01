@@ -2,10 +2,17 @@ import React, { Component } from 'react'
 import 'normalize.css'
 
 import './styles/App.css'
+import styles from './styles/sj-pads.css'
 import Intro from './components/sj-intro'
 import Header from './components/sj-header'
 import Pads from './components/sj-pads'
 import Options from './components/sj-options'
+
+let tone0 = new Audio(require('./assets/simonSounds0.ogg'))
+let tone1 = new Audio(require('./assets/simonSounds1.ogg'))
+let tone2 = new Audio(require('./assets/simonSounds2.ogg'))
+let tone3 = new Audio(require('./assets/simonSounds3.ogg'))
+// let toneX = new Audio(require('./assets/simonSoundsErr.ogg'))
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +31,7 @@ class App extends Component {
     this.nextTurn = this.nextTurn.bind(this)
     this.switchActive = this.switchActive.bind(this)
     this.setCpuSequence = this.setCpuSequence.bind(this)
+    this.showCpuSequence = this.showCpuSequence.bind(this)
     this.resetCpuSequence = this.resetCpuSequence.bind(this)
     this.resetPlyrSequence = this.resetPlyrSequence.bind(this)
     this.getInitialState = this.getInitialState.bind(this)
@@ -71,6 +79,72 @@ class App extends Component {
   setCpuSequence() {
     this.setState({
       cpuSequence: this.state.cpuSequence,
+    })
+  }
+
+  showCpuSequence() {
+    setTimeout(this.props.switchActive, 250)
+
+    const runCpuSequence = value => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(value === this.state.turnCount ? 'done' : 'no')
+        }, 500)
+      })
+    }
+
+    const loop = value =>
+      runCpuSequence(value).then(result => {
+        let cpuSequence = this.state.cpuSequence
+        let activatePad = document.getElementById(cpuSequence[value]).classList
+
+        let toggle = () => {
+          if (cpuSequence[value] == 0) {
+            activatePad.toggle(styles.cpu0)
+          }
+          if (cpuSequence[value] == 1) {
+            activatePad.toggle(styles.cpu1)
+          }
+          if (cpuSequence[value] == 2) {
+            activatePad.toggle(styles.cpu2)
+          }
+          if (cpuSequence[value] == 3) {
+            activatePad.toggle(styles.cpu3)
+          }
+        }
+
+        let sound = () => {
+          if (cpuSequence[value] == 0) {
+            tone0.play()
+          }
+          if (cpuSequence[value] == 1) {
+            tone1.play()
+          }
+          if (cpuSequence[value] == 2) {
+            tone2.play()
+          }
+          if (cpuSequence[value] == 3) {
+            tone3.play()
+          }
+        }
+
+        if (result === 'done') {
+          // Console.log('done')
+          setTimeout(toggle, 500)
+          sound()
+          setTimeout(toggle, 200)
+        } else {
+          // Console.log(this.props.turnCount + ': ' + value)
+          setTimeout(toggle, 500)
+          sound()
+          setTimeout(toggle, 200)
+          return loop(value + 1)
+        }
+      })
+
+    loop(0).then(() => {
+      console.log('loop complete')
+      this.resetPlyrSequence()
     })
   }
 
@@ -124,6 +198,7 @@ class App extends Component {
           nextTurn={this.nextTurn}
           switchActive={this.switchActive}
           setCpuSequence={this.setCpuSequence}
+          showCpuSequence={this.showCpuSequence}
           resetPlyrSequence={this.resetPlyrSequence}
           resetCpuSequence={this.resetCpuSequence}
           getInitialState={this.getInitialState}
@@ -138,6 +213,7 @@ class App extends Component {
           strictStart={this.strictStart}
           switchActive={this.switchActive}
           setCpuSequence={this.setCpuSequence}
+          showCpuSequence={this.showCpuSequence}
           getInitialState={this.getInitialState}
         />
       </div>

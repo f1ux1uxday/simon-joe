@@ -10,69 +10,6 @@ let toneX = new Audio(require('../assets/simonSoundsErr.ogg'))
 
 class Pads extends Component {
 
-  showCpuSequence() {
-    setTimeout(this.props.switchActive, 250)
-
-    const runCpuSequence = value =>
-      new Promise(resolve =>
-        setTimeout(() => resolve(value === this.props.turnCount ?
-          'done' : 'no'), 500))
-
-    const loop = value =>
-      runCpuSequence(value).then(result => {
-        let cpuSequence = this.props.cpuSequence
-        let activatePad = document.getElementById(cpuSequence[value]).classList
-
-        let toggle = () => {
-          if (cpuSequence[value] == 0) {
-            activatePad.toggle(styles.cpu0)
-          }
-          if (cpuSequence[value] == 1) {
-            activatePad.toggle(styles.cpu1)
-          }
-          if (cpuSequence[value] == 2) {
-            activatePad.toggle(styles.cpu2)
-          }
-          if (cpuSequence[value] == 3) {
-            activatePad.toggle(styles.cpu3)
-          }
-        }
-
-        let sound = () => {
-          if (cpuSequence[value] == 0) {
-            tone0.play()
-          }
-          if (cpuSequence[value] == 1) {
-            tone1.play()
-          }
-          if (cpuSequence[value] == 2) {
-            tone2.play()
-          }
-          if (cpuSequence[value] == 3) {
-            tone3.play()
-          }
-        }
-
-        if (result === 'done') {
-          // Console.log('done')
-          setTimeout(toggle, 500)
-          sound()
-          setTimeout(toggle, 200)
-        } else {
-          // Console.log(this.props.turnCount + ': ' + value)
-          setTimeout(toggle, 500)
-          sound()
-          setTimeout(toggle, 200)
-          return loop(value + 1)
-        }
-      })
-
-    loop(0).then(() => {
-      console.log('loop complete')
-      this.props.resetPlyrSequence()
-    })
-  }
-
   flushCpuSequence() {
     this.props.resetCpuSequence()
     for (let i = 0; i < 20; i++) {
@@ -108,6 +45,13 @@ class Pads extends Component {
         }
       }
 
+      // Move activate & sound methods to App, i.e.
+      // let sound = (a) => {
+      //  if (targ != a) {
+      //       toneX.play()
+      // }
+      // }
+
       let sound = () => {
         if (targ != cpuSequence[plyrSequence.length]) {
           toneX.play()
@@ -136,7 +80,7 @@ class Pads extends Component {
         // If wrong in friendly mode...
         if (plyrSequence[i] != cpuSequence[i] &&
           this.props.strict === 'off') {
-          this.showCpuSequence()
+          this.props.showCpuSequence()
           // Play error sound, switch 'active' to 'cpu'
           // and iterate through cpuSequence again
         }
@@ -146,7 +90,7 @@ class Pads extends Component {
           i !== this.props.turnCount &&
           this.props.strict === 'on') {
           this.flushCpuSequence()
-          this.showCpuSequence()
+          this.props.showCpuSequence()
           // Reset cpuSequence and iterate through
         }
 
@@ -154,23 +98,19 @@ class Pads extends Component {
           if (plyrSequence[i] == cpuSequence[i] &&
             this.props.turnCount < 19) {
             this.props.nextTurn()
-
-            this.showCpuSequence()
-
+            this.props.showCpuSequence()
             this.props.switchActive()
           }
 
           if (plyrSequence[i] == cpuSequence[i] &&
             this.props.turnCount === 19) {
-
             this.props.winGame()
           }
 
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
-
             this.flushCpuSequence()
-            this.showCpuSequence()
+            this.props.showCpuSequence()
           }
         }
       }
