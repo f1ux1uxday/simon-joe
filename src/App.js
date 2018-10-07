@@ -134,7 +134,7 @@ class App extends Component {
           sound()
           setTimeout(toggle, 200)
         } else {
-          // Console.log(this.props.turnCount + ': ' + value)
+          // Iterate
           setTimeout(toggle, 500)
           sound()
           setTimeout(toggle, 200)
@@ -143,9 +143,18 @@ class App extends Component {
       })
 
     loop(0).then(() => {
-      console.log('loop complete')
+      // console.log('loop complete')
       this.resetPlyrSequence()
     })
+  }
+
+  flushCpuSequence() {
+    this.resetCpuSequence()
+    for (let i = 0; i < 20; i++) {
+      let randomNumber = Math.floor(Math.random() * 4)
+      this.cpuSequence[i] = randomNumber
+    }
+    this.setCpuSequence()
   }
 
   resetCpuSequence() {
@@ -199,8 +208,9 @@ class App extends Component {
           switchActive={this.switchActive}
           setCpuSequence={this.setCpuSequence}
           showCpuSequence={this.showCpuSequence}
-          resetPlyrSequence={this.resetPlyrSequence}
+          flushCpuSequence={this.flushCpuSequence}
           resetCpuSequence={this.resetCpuSequence}
+          resetPlyrSequence={this.resetPlyrSequence}
           getInitialState={this.getInitialState}
           winGame={this.winGame}
         />

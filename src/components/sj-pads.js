@@ -10,16 +10,6 @@ let toneX = new Audio(require('../assets/simonSoundsErr.ogg'))
 
 class Pads extends Component {
 
-  flushCpuSequence() {
-    this.props.resetCpuSequence()
-    for (let i = 0; i < 20; i++) {
-      let randomNumber = Math.floor(Math.random() * 4)
-      this.props.cpuSequence[i] = randomNumber
-    }
-    this.props.setCpuSequence()
-    // Console.log(this.props.cpuSequence)
-  }
-
   clickHandle(e) {
     let cpuSequence = this.props.cpuSequence
     let plyrSequence = this.props.plyrSequence
@@ -89,7 +79,7 @@ class Pads extends Component {
         if (plyrSequence[i] != cpuSequence[i] &&
           i !== this.props.turnCount &&
           this.props.strict === 'on') {
-          this.flushCpuSequence()
+          this.props.flushCpuSequence()
           this.props.showCpuSequence()
           // Reset cpuSequence and iterate through
         }
@@ -109,7 +99,7 @@ class Pads extends Component {
 
           if (plyrSequence[i] != cpuSequence[i] &&
             this.props.strict === 'on') {
-            this.flushCpuSequence()
+            this.props.flushCpuSequence()
             this.props.showCpuSequence()
           }
         }
